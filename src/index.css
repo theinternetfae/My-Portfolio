@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+/* "Atkinson Hyperlegible Mono", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Castoro:ital@0;1&display=swap');
+/* "Castoro", serif */
+
+/* @theme {
+  --color-lightpurple: #3C096C;
+  --color-darkpurple: #240046;
+} */
+
+* {
+  margin: 0;
+}
+
+.overall-body {
+  background-image: url(download.jfif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+
+.overall-body .name {
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+.overall-body h1, .sub-heading {
+  text-align: center;
+  padding: 10px;
+}
+
+.project-body {
+  margin-top: 20px;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.project-body .arrow {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.project-body .arrow:active {
+  transform: scale(0.85);
+}
+
+.blur {
+  width: 85%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  z-index: 2;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
+  display: flex;
+  justify-content: space-between;
+}
+
+.blur .project-info-box, .project-vid-box {
+  width: 50%;
+}
+
+.blur .project-vid-box {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+}
+
+.blur .project-vid-box .vid {
+  border: solid 1px white;
+  height: 80%;
+  width: 100%; 
+  border-radius: 10px;
+  box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
+  background: #3C096C;
+}
+
+.blur .project-info-box {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.blur .project-info {
+  border: solid 1px white;
+  display: flex;
+  gap: 14px;
+  border-radius: 10px;
+  background: #3C096C;
+  padding: 10px;
+  box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
+  flex-direction: column;
+}
+
+.blur .project-info p {
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.blur .project-info .icons {
+  font-size: larger;
+  display: flex;
+  gap: 8px;
+}
