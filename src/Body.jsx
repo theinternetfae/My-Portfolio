@@ -1,7 +1,28 @@
 import { SiHtml5, SiTailwindcss, SiReact } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
+import { projects } from "./projects.js";
+import { useEffect, useState } from "react";
 
 function Body() {
+    let projectCount = 0;
+    const [currentProject, setCurrentProject] = useState(projects[projectCount]);
+
+    console.log(currentProject);
+
+    function backward() {
+        projectCount--;
+        console.log("clicked");
+    }
+
+    function forward() {
+        projectCount++;
+        console.log("clicked");
+    }
+
+    useEffect(() => {
+        console.log(projectCount);
+    }, [projectCount]) 
+
     return ( 
         <div className="overall-body">
     
@@ -10,19 +31,24 @@ function Body() {
     
             <section className="project-body">
 
-                <i className="bi-caret-left-fill arrow"></i>
+                <i 
+                    className="bi-caret-left-fill arrow"
+                    onClick={() => backward()}
+                ></i>
 
-                <section className="blur">
+                <section className="blur" style={{
+                    boxShadow: `0 0 0 2px ${currentProject.border[0]}, 0 0 12px ${currentProject.border[1]}, 0 0 24px ${currentProject.border[2]}`
+                }}>
                     <div className="project-info-box">
     
                         <div className="project-info">
                             <h2>Name</h2>
-                            <p>Optima</p>
+                            <p>{currentProject.name}</p>
                         </div>
     
                         <div className="project-info">
                             <h2>Description</h2>
-                            <p>Optima is a productivity app that analyzes task completion patterns to dynamically adapt its behavior. Its core feature, a self-evolving system, adjusts based on user consistency to encourage sustainable productivity rather than burnout.</p>
+                            <p>{currentProject.description}</p>
                         </div>
     
                         <div className="project-info">
@@ -47,15 +73,18 @@ function Body() {
                         <div className="vid">
                             <video controls 
                                 className="video"
-                                poster="/images/Optima-banner.png"
+                                poster={currentProject.banner}
                             >
-                                <source src="/videos/Girlypop-first-recording.mp4" type="video/mp4" />
+                                <source src={currentProject.video} />
                             </video>
                         </div>
                     </div>
                 </section>
 
-                <i className="bi-caret-right-fill arrow"></i>
+                <i 
+                    className="bi-caret-right-fill arrow"
+                    onClick={() => forward()}
+                ></i>
 
             </section>
 
