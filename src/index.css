@@ -3,17 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Castoro:ital@0;1&display=swap');
 /* "Castoro", serif */
 
-/* @theme {
-  --color-lightpurple: #3C096C;
-  --color-darkpurple: #240046;
-} */
-
 * {
   margin: 0;
 }
 
 .overall-body {
-  background-image: url(download.jfif);
+  background-image: url(/images/download.jfif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -54,9 +49,13 @@
   z-index: 2;
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
+  box-shadow:
+    0 0 0 2px rgba(59,130,246,0.8),  
+    0 0 12px rgba(59,130,246,0.6),   
+    0 0 24px rgba(59,130,246,0.4);   
   display: flex;
   justify-content: space-between;
+  transition: 3s ease 0.5s;
 }
 
 .blur .project-info-box, .project-vid-box {
@@ -70,12 +69,20 @@
 }
 
 .blur .project-vid-box .vid {
-  border: solid 1px white;
   height: 80%;
   width: 100%; 
   border-radius: 10px;
   box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
-  background: #3C096C;
+  background: #524d4b91;
+  backdrop-filter: blur(10px);
+}
+
+.blur .project-vid-box .vid .video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover; 
+  border-radius: 10px;
+  box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
 }
 
 .blur .project-info-box {
@@ -86,23 +93,24 @@
 }
 
 .blur .project-info {
-  border: solid 1px white;
   display: flex;
   gap: 14px;
   border-radius: 10px;
-  background: #3C096C;
+  background: #343434be;
   padding: 10px;
   box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
   flex-direction: column;
+  backdrop-filter: blur(10px);
 }
 
 .blur .project-info p {
   font-size: large;
   font-family: 'Courier New', Courier, monospace;
+  text-shadow: 0, 0 5px (rgba(0, 0, 0, 1));
 }
 
 .blur .project-info .icons {
-  font-size: larger;
+  font-size: 25px;
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }

@@ -45,7 +45,12 @@ function Body() {
                     </div>
                     <div className="project-vid-box">
                         <div className="vid">
-
+                            <video controls 
+                                className="video"
+                                poster="/images/Optima-banner.png"
+                            >
+                                <source src="/videos/Girlypop-first-recording.mp4" type="video/mp4" />
+                            </video>
                         </div>
                     </div>
                 </section>
