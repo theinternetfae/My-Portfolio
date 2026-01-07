@@ -13,6 +13,9 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: white;
 }
 
@@ -52,6 +55,53 @@
   display: flex;
   justify-content: space-between;
   transition: 2s ease 0.5s;
+}
+
+.blur-error {
+  width: 85%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  z-index: 2;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 2s ease 0.5s;
+  box-shadow: 0 0 0 2px white, 
+    0 0 12px white, 
+    0 0 24px white;
+}
+
+.blur-error img{
+  width: 20%;
+  height: 30%;  
+}
+
+.blur-error p{
+  font-size: 20px;
+  font-family:  "Castoro", serif;  
+  background: #524d4b91;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.blur-error button{
+  margin-top: 30px;
+  padding: 10px;
+  width: 10%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));;
+  font-size: 20px;  
+  background: #2D1E64;
+  color: white;
+  cursor: pointer;
+}
+
+.blur-error button:active{
+  transform: scale(0.90);
 }
 
 .blur .project-info-box, .project-vid-box {
