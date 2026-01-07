@@ -1,7 +1,7 @@
-import { SiHtml5, SiTailwindcss, SiReact } from "react-icons/si";
+import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiPython } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { projects } from "./projects.js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Body() {
     const [projectCount, setProjectCount] = useState(0);
@@ -16,6 +16,33 @@ function Body() {
     function forward() {
         setProjectCount(prev => Math.min(prev + 1, projects.length - 1));
     }
+
+    const techIcons = {
+        HTML: {
+            Icon: SiHtml5,
+            color: "#E34F26"
+        },
+        React: {
+            Icon: SiReact,
+            color: "#61DAFB"
+        },
+        TailwindCSS: {
+            Icon: SiTailwindcss,
+            color: "#38BDF8"
+        },
+        JavaScript: {
+            Icon: SiJavascript,
+            color: "#F7DF1E"
+        },
+        CSS: {
+            Icon: SiCss3,
+            color: "#1572B6"
+        },
+        Python: {
+            Icon: SiPython,
+            color: "#3776AB"
+        }
+    };
 
     return ( 
         <div className="overall-body">
@@ -52,17 +79,31 @@ function Body() {
                         <div className="project-info">
                             <h2>Language and tools</h2>
                             <div className="icons">
-                                <SiHtml5 />
-                                <SiTailwindcss />
-                                <SiReact />
+                                
+                                {currentProject.langTools.map(tool => {
+                                    const iconProps = techIcons[tool];
+                                    if (!iconProps) return "Languages not inputed";
+
+                                    const {Icon, color} = iconProps;
+
+                                    return <Icon 
+                                        key={tool} 
+                                        style={{ color }} 
+                                        title={tool}
+                                    />;
+                                })}
+                                
                             </div>
                         </div>
 
                         <div className="project-info">
                             <h2>More</h2>
                             <div className="icons">
-                                <FaGithub />
-                                <FaGlobe />
+                                <a href={currentProject.gitLink} target="_blank" title="Github file"><FaGithub /></a>
+                                <FaGlobe style={!currentProject.live ? {
+                                    color: "grey",
+                                    cursor: "not-allowed"
+                                } : ""} title={`Live view ${!currentProject.live && "(Not available)"}`}/>
                             </div>
                         </div>
 
