@@ -4,24 +4,18 @@ import { projects } from "./projects.js";
 import { useEffect, useState } from "react";
 
 function Body() {
-    let projectCount = 0;
-    const [currentProject, setCurrentProject] = useState(projects[projectCount]);
+    const [projectCount, setProjectCount] = useState(0);
+    const currentProject = projects[projectCount];
 
     console.log(currentProject);
 
     function backward() {
-        projectCount--;
-        console.log("clicked");
+        setProjectCount(prev => Math.max(prev - 1, 0));
     }
 
     function forward() {
-        projectCount++;
-        console.log("clicked");
+        setProjectCount(prev => Math.min(prev + 1, projects.length - 1));
     }
-
-    useEffect(() => {
-        console.log(projectCount);
-    }, [projectCount]) 
 
     return ( 
         <div className="overall-body">
@@ -34,6 +28,10 @@ function Body() {
                 <i 
                     className="bi-caret-left-fill arrow"
                     onClick={() => backward()}
+                    style={ projectCount === 0 ? {
+                        cursor: "not-allowed",
+                        color: "grey"
+                    } : undefined}
                 ></i>
 
                 <section className="blur" style={{
@@ -70,6 +68,10 @@ function Body() {
 
                     </div>
                     <div className="project-vid-box">
+                        <div className="search-box">
+                            <input type="text" placeholder="Search project"/>
+                            <button className="bi bi-search"></button>
+                        </div>
                         <div className="vid">
                             <video controls 
                                 className="video"
@@ -84,6 +86,10 @@ function Body() {
                 <i 
                     className="bi-caret-right-fill arrow"
                     onClick={() => forward()}
+                    style={ projectCount === projects.length - 1 ? {
+                        cursor: "not-allowed",
+                        color: "grey"
+                    } : undefined}
                 ></i>
 
             </section>
