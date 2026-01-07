@@ -1,13 +1,12 @@
 import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiPython } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { projects } from "./projects.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Body() {
     const [projectCount, setProjectCount] = useState(0);
+    const [searching, setSearching] = useState("");
     const currentProject = projects[projectCount];
-
-    console.log(currentProject);
 
     function backward() {
         setProjectCount(prev => Math.max(prev - 1, 0));
@@ -44,6 +43,18 @@ function Body() {
         }
     };
 
+    function findSearch() {
+        const search = searching.toLowerCase();
+
+        const searchedForr = projects.filter(project => {
+            const projectName = project.name.toLowerCase()
+            return search.split(" ").includes(projectName);
+        });
+
+        setSearching("");
+        setProjectCount(searchedForr[0].id);
+    }
+
     return ( 
         <div className="overall-body">
     
@@ -77,7 +88,7 @@ function Body() {
                         </div>
     
                         <div className="project-info">
-                            <h2>Language and tools</h2>
+                            <h2>Languages and tools</h2>
                             <div className="icons">
                                 
                                 {currentProject.langTools.map(tool => {
@@ -110,8 +121,19 @@ function Body() {
                     </div>
                     <div className="project-vid-box">
                         <div className="search-box">
-                            <input type="text" placeholder="Search project"/>
-                            <button className="bi bi-search"></button>
+                        
+                            <input 
+                                type="text" 
+                                placeholder="Search project" 
+                                value={searching} 
+                                onChange={(e) => setSearching(e.target.value)} 
+                            />
+
+                            <button 
+                                className="bi bi-search" 
+                                onClick={() => findSearch()}
+                            ></button>
+                        
                         </div>
                         <div className="vid">
                             <video controls 
