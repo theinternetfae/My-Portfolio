@@ -8,7 +8,7 @@
 }
 
 .overall-body {
-  background-image: url(/images/download.jfif);
+  background-image: url(/images/purple-on-black.jfif);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -162,6 +162,7 @@
   border-radius: 10px;
   box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
   background: #343434be;
+  position: relative;
   backdrop-filter: blur(10px);
 }
 
@@ -171,6 +172,28 @@
   object-fit: cover; 
   border-radius: 10px;
   box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
+}
+
+.blur .project-vid-box .vid .test {
+  height: 100%;
+  width: 100%;
+  z-index: 222;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blur .project-vid-box .vid .play-btn {
+  padding: 25px;
+  border-radius: 100%;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 300px;
+  color: white;
+  cursor: pointer;
+  background: #524d4b91;
 }
 
 .blur .project-info-box {

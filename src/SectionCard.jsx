@@ -1,12 +1,15 @@
 import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiPython } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { projects } from "./projects.js";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function SectionCard({ currentProject, editCount, found }) {
 
     const [searching, setSearching] = useState("");
-        
+    
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
     const techIcons = {
         HTML: {
             Icon: SiHtml5,
@@ -47,6 +50,11 @@ function SectionCard({ currentProject, editCount, found }) {
         setSearching("");
         editCount(searchedForr[0].id);
     }
+
+    const handlePlay = () => {
+        console.log("called")
+        videoRef.current?.requestFullscreen();
+    };
 
     return ( 
         <section className="blur" style={{
@@ -113,12 +121,30 @@ function SectionCard({ currentProject, editCount, found }) {
                 
                 </div>
                 <div className="vid">
-                    <video controls 
+                    
+                    <div className="test">
+
+                        {!isPlaying && (
+                            <button
+                            title="Play presentation"
+                            onClick={() => {
+                                videoRef.current.play();
+                                setIsPlaying(true);
+                            }}
+                            className="bi bi-play-fill play-btn"
+                            >
+                            </button>
+                        )}
+
+                    </div>
+
+                    <video controls={false}  
+                        ref={videoRef}
                         className="video"
+                        onPlay={handlePlay}
                         poster={currentProject.banner}
-                    >
-                        <source src={currentProject.video} />
-                    </video>
+                        src={currentProject.video}
+                    />
                 </div>
             </div>
         </section>
