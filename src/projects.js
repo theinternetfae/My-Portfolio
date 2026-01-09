@@ -15,7 +15,7 @@ export const projects = [
         name: "GirlyPop",
         banner: "/images/New-GirlyPop-logo.png",
         video: "/videos/Girlypop-first-recording.mp4", 
-        description: "This is an e-commerce website made just for femme clothing. It provides a focused space where users can discover, list, and trade styles that reflect feminine aesthetics across all sizes, eras, and interpretations, without having to dig through unrelated items.",
+        description: "GirlyPop is an e-commerce website made just for femme clothing. It provides a focused space where users can discover, list, and trade styles that reflect feminine aesthetics across all sizes, eras, and interpretations, without having to dig through unrelated items.",
         langTools: ["HTML", "JavaScript", "CSS"],
         gitLink: "https://github.com/theinternetfae/GirlyPop.git",
         live: "",
