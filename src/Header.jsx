@@ -1,11 +1,11 @@
 function Header() {
     return ( 
-        <header>
+        <header className="sticky">
             <nav>
                 <img src="/images/Logo-InternetFae.png" alt="" />
                 <div className="nav-box">
-                    <a href="" className="navigating">Portfolio</a>
-                    <a href="" className="navigating">About me</a>
+                    <a href=""><button className="navigating">Portfolio</button></a>
+                    <a href=""><button className="navigating">About me</button></a>
                 </div>
             </nav>
         </header>

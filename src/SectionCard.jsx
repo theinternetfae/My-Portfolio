@@ -143,7 +143,7 @@ function SectionCard({ currentProject, editCount, found }) {
                         className="video"
                         onPlay={handlePlay}
                         poster={currentProject.banner}
-                        src={currentProject.video}
+                        src={null}
                     />
                 </div>
             </div>
