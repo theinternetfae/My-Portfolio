@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
+
+    const location = useLocation();
+    console.log('loca:', location);
+
     return ( 
         <header className="sticky">
             <nav>
@@ -8,11 +12,11 @@ function Header() {
                 <div className="nav-box">
                     
                     <Link to="/">
-                        <button className="navigating">Portfolio</button>
+                        <button className={`navigating ${location.pathname === "/" ? "boxy" : ""}`}>Portfolio</button>
                     </Link>
 
                     <Link to="/about">
-                        <button className="navigating">About me</button>
+                        <button className={`navigating ${location.pathname === "/about" ? "boxy" : ""}`}>About me</button>
                     </Link>
 
                 </div>
