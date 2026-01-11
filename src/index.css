@@ -141,8 +141,8 @@ nav .nav-box .navigating:active{
 
 .blur-about {
   margin: auto;
-  width: 85%;
-  height: 95%;
+  width: 75%;
+  height: 85%;
   background: rgba(255, 255, 255, 0.15);
   z-index: 2;
   border-radius: 20px;
@@ -150,6 +150,30 @@ nav .nav-box .navigating:active{
   display: flex;
   justify-content: space-between;
   transition: 2s ease 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  box-shadow: 0 0 0 2px #9D4EDD, 
+    0 0 12px #7B2CBF, 
+    0 0 24px #5A189A;
+}
+
+.blur-about .about-desc {
+  height: 60%;
+  width: 80%;
+  border-radius: 10px;
+  background: #343434be;
+  padding: 12px;
+  font-size: 20px;
+  box-shadow: 0, 0 5px (rgba(0, 0, 0, .5));
+  backdrop-filter: blur(10px);
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .blur-error img{

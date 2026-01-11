@@ -52,7 +52,7 @@ function SectionCard({ currentProject, editCount, found }) {
     }
 
     const handlePlay = () => {
-        console.log("called")
+        console.log("called");
         videoRef.current?.requestFullscreen();
     };
 
