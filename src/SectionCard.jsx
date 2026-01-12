@@ -38,6 +38,9 @@ function SectionCard({ currentProject, editCount, found }) {
     };
 
     function findSearch() {
+        
+        if(!searching) return;
+
         const search = searching.toLowerCase();
 
         const searchedForr = projects.filter(project => {
@@ -57,95 +60,102 @@ function SectionCard({ currentProject, editCount, found }) {
     };
 
     return ( 
-        <section className="blur" style={{
-            boxShadow: `0 0 0 2px ${currentProject.border[0]}, 0 0 12px ${currentProject.border[1]}, 0 0 24px ${currentProject.border[2]}`
-        }}>
-            <div className="project-info-box">
+        <section className="blur-cont">
+            
+            <div className="blur"/>
 
-                <div className="project-info">
-                    <h2>Name</h2>
-                    <p>{currentProject.name}</p>
-                </div>
+            <div className="blur-content" style={{
+                boxShadow: `0 0 0 2px ${currentProject.border[0]}, 0 0 12px ${currentProject.border[1]}, 0 0 24px ${currentProject.border[2]}`
+            }}>
+            
+                <div className="project-info-box">
 
-                <div className="project-info">
-                    <h2>Description</h2>
-                    <p>{currentProject.description}</p>
-                </div>
-
-                <div className="project-info">
-                    <h2>Languages and tools</h2>
-                    <div className="icons">
-                        
-                        {currentProject.langTools.map(tool => {
-                            const iconProps = techIcons[tool];
-                            if (!iconProps) return "Languages not inputed";
-
-                            const {Icon, color} = iconProps;
-
-                            return <Icon 
-                                key={tool} 
-                                style={{ color }} 
-                                title={tool}
-                            />;
-                        })}
-                        
+                    <div className="project-info">
+                        <h2>Name</h2>
+                        <p>{currentProject.name}</p>
                     </div>
-                </div>
 
-                <div className="project-info">
-                    <h2>More</h2>
-                    <div className="icons">
-                        <a href={currentProject.gitLink} target="_blank" title="Github file"><FaGithub /></a>
-                        <FaGlobe style={!currentProject.live ? {
-                            color: "grey",
-                            cursor: "not-allowed"
-                        } : ""} title={`Live view ${!currentProject.live && "(Not available)"}`}/>
+                    <div className="project-info">
+                        <h2>Description</h2>
+                        <p>{currentProject.description}</p>
                     </div>
-                </div>
 
-            </div>
-            <div className="project-vid-box">
-                <div className="search-box">
-                
-                    <input 
-                        type="text" 
-                        placeholder="Search project" 
-                        value={searching} 
-                        onChange={(e) => setSearching(e.target.value)} 
-                    />
+                    <div className="project-info">
+                        <h2>Languages and tools</h2>
+                        <div className="icons">
+                            
+                            {currentProject.langTools.map(tool => {
+                                const iconProps = techIcons[tool];
+                                if (!iconProps) return "Languages not inputed";
 
-                    <button 
-                        className="bi bi-search" 
-                        onClick={() => findSearch()}
-                    ></button>
-                
+                                const {Icon, color} = iconProps;
+
+                                return <Icon 
+                                    key={tool} 
+                                    style={{ color }} 
+                                    title={tool}
+                                />;
+                            })}
+                            
+                        </div>
+                    </div>
+
+                    <div className="project-info">
+                        <h2>More</h2>
+                        <div className="icons">
+                            <a href={currentProject.gitLink} target="_blank" title="Github file"><FaGithub /></a>
+                            <FaGlobe style={!currentProject.live ? {
+                                color: "grey",
+                                cursor: "not-allowed"
+                            } : ""} title={`Live view ${!currentProject.live && "(Not available)"}`}/>
+                        </div>
+                    </div>
+
                 </div>
-                <div className="vid">
+                <div className="project-vid-box">
+                    <div className="search-box">
                     
-                    <div className="test">
+                        <input 
+                            type="text" 
+                            placeholder="Search project" 
+                            value={searching} 
+                            onChange={(e) => setSearching(e.target.value)} 
+                        />
 
-                        {!isPlaying && (
-                            <button
-                            title="Play presentation"
-                            onClick={() => {
-                                videoRef.current.play();
-                                setIsPlaying(true);
-                            }}
-                            className="bi bi-play-fill play-btn"
-                            >
-                            </button>
-                        )}
-
+                        <button 
+                            className="bi bi-search" 
+                            onClick={() => findSearch()}
+                        ></button>
+                    
                     </div>
+                    <div className="vid">
+                        
+                        <div className="test">
 
-                    <video controls={false}  
-                        ref={videoRef}
-                        className="video"
-                        onPlay={handlePlay}
-                        poster={currentProject.banner}
-                        src={null}
-                    />
+                            {!isPlaying && (
+                                <button
+                                title="Play presentation"
+                                onClick={() => {
+                                    videoRef.current.play();
+                                    setIsPlaying(true);
+                                }}
+                                className="bi bi-play-fill play-btn"
+                                >
+                                </button>
+                            )}
+
+                        </div>
+
+                        <video controls={false}  
+                            ref={videoRef}
+                            className="video"
+                            onPlay={handlePlay}
+                            poster={currentProject.banner}
+                            src={null}
+                        />
+                    </div>
                 </div>
+
             </div>
         </section>
     );
