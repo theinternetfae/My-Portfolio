@@ -13,15 +13,20 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 98vh;
+  height: 96vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: white;
 }
 
+.overall-body h1 {
+  margin-top: 40px;
+}
+
 .overall-body .name {
   font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-weight: bold;
 }
 
 .overall-body h1, .sub-heading {
@@ -34,7 +39,7 @@
   /* HEADER */
 
   .sticky {
-    @apply sticky top-0;
+    @apply sticky top-0 h-[4vh];
  
     nav {
       @apply text-white bg-[#8c52ff] h-[40px] p-1 flex items-center justify-between md:h-[55px];
@@ -76,6 +81,21 @@
       }
     }
   }
+
+
+      
+  /* OVERALL-BODY */
+
+  .overall-body {
+
+    h1 {
+      @apply text-xl md:text-2xl;
+    }
+
+  }
+
+
+  
 }
 
 
