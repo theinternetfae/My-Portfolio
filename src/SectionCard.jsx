@@ -1,9 +1,9 @@
 import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiPython } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { projects } from "./projects.js";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 
-function SectionCard({ currentProject, editCount, found}) {
+function SectionCard({ currentProject, editCount, found, count}) {
 
     const [searching, setSearching] = useState("");
     
@@ -54,23 +54,28 @@ function SectionCard({ currentProject, editCount, found}) {
         editCount(searchedForr[0].id);
     }
 
+
+
     const [expanded, setExpanded] = useState(false);
-    const descArr = currentProject.description.split(" ");
     const LIMIT = 33;
 
-    function truncate() {
-        if(!expanded) {
-        
-            let editedText = descArr.slice(0, LIMIT);
-            
-            editedText = editedText.join(" ");
-        
-            return editedText;
-        } else {
-            return currentProject.description;
-        };
-    }
+    const truncate = useMemo(() => {
 
+        const descArr = currentProject.description.split(" ");
+
+        if(expanded || descArr.length <= LIMIT) {
+            return currentProject.description
+        }
+
+        return descArr.slice(0, LIMIT).join(" ");
+
+    }, [expanded, count]);
+
+    const isTruncated = currentProject.description.split(" ").length > LIMIT;
+
+
+
+    
     useEffect(() => {
         
         function onEnter(e) {
@@ -123,12 +128,14 @@ function SectionCard({ currentProject, editCount, found}) {
 
                     <div className="project-info">
                         <h2>Description</h2>
-                        <p>{truncate()}
+                        <p>{truncate}
                             <span className="text-[#9D4EDD] cursor-pointer" 
                                 onClick={
                                     () => setExpanded(prev => !prev)
                                 }>
-                                    {descArr.length > LIMIT ? (expanded ? "Close" : "...More") : " "} 
+                                    {
+                                        isTruncated ? (!expanded ? " ...More" : " less") : " "
+                                    } 
                             </span>
                         </p>
                     </div>
