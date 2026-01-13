@@ -1,7 +1,7 @@
 import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiPython } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { projects } from "./projects.js";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function SectionCard({ currentProject, editCount, found }) {
 
@@ -53,6 +53,32 @@ function SectionCard({ currentProject, editCount, found }) {
         setSearching("");
         editCount(searchedForr[0].id);
     }
+
+    useEffect(() => {
+        
+        function onEnter(e) {
+
+            if (e.key === "Enter") {
+                        
+                const search = searching.toLowerCase();
+
+                const searchedForr = projects.filter(project => {
+                    const projectName = project.name.toLowerCase()
+                    return search.split(" ").includes(projectName);
+                });
+
+                if(searchedForr.length === 0) found(prev => !prev)
+
+                setSearching("");
+                editCount(searchedForr[0].id);
+                
+            }
+        
+        }
+
+        window.addEventListener("keydown", onEnter);
+        return () => window.removeEventListener("keydown", onEnter);
+    }, [searching, editCount, found]);
 
     const handlePlay = () => {
         console.log("called");
