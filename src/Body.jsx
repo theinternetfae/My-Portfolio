@@ -37,6 +37,7 @@ function Body() {
                     currentProject={currentProject}
                     editCount={setProjectCount}
                     found={setFound}
+                    count={projectCount}
                 /> : <NotFound
                     found={setFound}
                 /> 

@@ -3,7 +3,7 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 import { projects } from "./projects.js";
 import { useState, useRef, useEffect } from "react";
 
-function SectionCard({ currentProject, editCount, found }) {
+function SectionCard({ currentProject, editCount, found}) {
 
     const [searching, setSearching] = useState("");
     
@@ -54,6 +54,23 @@ function SectionCard({ currentProject, editCount, found }) {
         editCount(searchedForr[0].id);
     }
 
+    const [expanded, setExpanded] = useState(false);
+    const descArr = currentProject.description.split(" ");
+    const LIMIT = 33;
+
+    function truncate() {
+        if(!expanded) {
+        
+            let editedText = descArr.slice(0, LIMIT);
+            
+            editedText = editedText.join(" ");
+        
+            return editedText;
+        } else {
+            return currentProject.description;
+        };
+    }
+
     useEffect(() => {
         
         function onEnter(e) {
@@ -85,6 +102,8 @@ function SectionCard({ currentProject, editCount, found }) {
         videoRef.current?.requestFullscreen();
     };
 
+    console.log(currentProject.description.split(" "));
+
     return ( 
         <section className="blur-cont">
             
@@ -104,7 +123,14 @@ function SectionCard({ currentProject, editCount, found }) {
 
                     <div className="project-info">
                         <h2>Description</h2>
-                        <p>{currentProject.description}</p>
+                        <p>{truncate()}
+                            <span className="text-[#9D4EDD] cursor-pointer" 
+                                onClick={
+                                    () => setExpanded(prev => !prev)
+                                }>
+                                    {descArr.length > LIMIT ? (expanded ? "Close" : "...More") : " "} 
+                            </span>
+                        </p>
                     </div>
 
                     <div className="project-info">
