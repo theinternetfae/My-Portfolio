@@ -68,6 +68,7 @@ function SectionCard({ currentProject, editCount, found }) {
                 boxShadow: `0 0 0 2px ${currentProject.border[0]}, 0 0 12px ${currentProject.border[1]}, 0 0 24px ${currentProject.border[2]}`
             }}>
             
+                {/*PROJECT-INFO*/}
                 <div className="project-info-box">
 
                     <div className="project-info">
@@ -112,6 +113,8 @@ function SectionCard({ currentProject, editCount, found }) {
                     </div>
 
                 </div>
+
+                {/*PROJECT-VID*/}
                 <div className="project-vid-box">
                     <div className="search-box">
                     

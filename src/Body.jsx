@@ -24,14 +24,14 @@ function Body() {
     
             <section className="project-body">
 
-                <i 
+                {!found ? <i 
                     className="bi-caret-left-fill arrow"
                     onClick={() => backward()}
                     style={ projectCount === 0 ? {
                         cursor: "not-allowed",
                         color: "grey"
                     } : undefined}
-                ></i>
+                ></i> : ""}
 
                 {!found ? <SectionCard 
                     currentProject={currentProject}
@@ -42,14 +42,14 @@ function Body() {
                 /> 
                 }
 
-                <i 
+                {!found ? <i 
                     className="bi-caret-right-fill arrow"
                     onClick={() => forward()}
                     style={ projectCount === projects.length - 1 ? {
                         cursor: "not-allowed",
                         color: "grey"
                     } : undefined}
-                ></i>
+                ></i> : ""}
 
             </section>
 
