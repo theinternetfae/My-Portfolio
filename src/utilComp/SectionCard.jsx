@@ -1,6 +1,6 @@
 import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiPython } from "react-icons/si";
 import { FaGithub, FaGlobe } from "react-icons/fa";
-import { projects } from "./projects.js";
+import { projects } from "../jsFiles/projects.js";
 import { useState, useRef, useEffect, useMemo } from "react";
 
 function SectionCard({ currentProject, editCount, found, count}) {

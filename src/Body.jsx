@@ -1,7 +1,7 @@
-import { projects } from "./projects.js";
+import { projects } from "./jsFiles/projects.js";
 import { useState } from "react";
-import SectionCard from "./SectionCard.jsx";
-import NotFound from "./NotFound.jsx";
+import SectionCard from "./utilComp/SectionCard.jsx";
+import NotFound from "./utilComp/NotFound.jsx";
 
 function Body() {
     const [projectCount, setProjectCount] = useState(0);

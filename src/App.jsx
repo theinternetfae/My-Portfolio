@@ -1,7 +1,7 @@
-import Header from "./Header.jsx";
+import Header from "./utilComp/Header.jsx";
 import Body from "./Body.jsx";
 import About from "./About.jsx"
-import Loader from "./Loader.jsx"
+import Loader from "./utilComp/Loader.jsx"
 import { Routes, Route, useLocation } from "react-router-dom";
 import {useState, useEffect} from "react";
 
@@ -31,7 +31,7 @@ function App() {
       const timer = setTimeout(() => {
         setLoading(false);
         setNextLocation(location); 
-      }, 3000); 
+      }, 2000); 
 
       return () => clearTimeout(timer);
     }
