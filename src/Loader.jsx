@@ -14,7 +14,7 @@ function Loader() {
             </div>
             
             <p>
-                Loading...
+                Please hold on...
             </p>
         
         </section>
