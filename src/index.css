@@ -264,7 +264,7 @@
     }
 
     .about-desc {
-      @apply bg-[#343434be] h-[75%] w-[95%] rounded-lg p-[12px] text-[20px] shadow-lg backdrop-blur-[10px] font-['Courier_New',Courier,monospace] flex justify-center text-center overflow-y-auto no-scrollbar lg:h-[60%] lg:w-[80%];
+      @apply bg-[#343434be] h-[75%] w-[95%] rounded-lg p-[12px] text-[16px] shadow-lg backdrop-blur-[10px] font-['Courier_New',Courier,monospace] flex flex-col gap-2 text-center overflow-y-auto no-scrollbar lg:h-[60%] lg:w-[80%] lg:text-[20px];
     }
   }
 
