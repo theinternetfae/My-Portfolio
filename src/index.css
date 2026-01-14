@@ -44,6 +44,13 @@
 
 @layer components {
 
+  .test {
+    @apply relative;
+  }
+
+  .loader {
+    @apply absolute border border-2 border-white h-full w-full z-99 bg-gradient-to-r from-[#5A189A] to-[#3C096C] flex flex-col justify-center items-center text-white
+  }
 
   /* HEADER */
 
@@ -160,7 +167,7 @@
           @apply h-full w-full object-cover rounded-lg shadow-lg;
         }
         
-        & .test {
+        & .play-cont {
           @apply h-full w-full absolute flex items-center justify-center;
         }
 

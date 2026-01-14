@@ -190,7 +190,7 @@ function SectionCard({ currentProject, editCount, found, count}) {
                     </div>
                     <div className="vid">
                         
-                        <div className="test">
+                        <div className="play-cont">
 
                             {!isPlaying && (
                                 <button
