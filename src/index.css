@@ -4,6 +4,16 @@
 /* "Castoro", serif */
 @import "tailwindcss";
 
+
+@keyframes scaleOut {
+    0% {
+        transform: scale(1);
+    }
+    80%, 100% {
+        transform: scale(0);
+    }
+}
+
 .overall-body {
   background-image: url(/images/purple-on-black.jfif);
   background-repeat: no-repeat;
@@ -49,9 +59,26 @@
   }
 
   .loader {
-    @apply absolute border border-2 border-white h-full w-full z-99 bg-gradient-to-r from-[#5A189A] to-[#3C096C] flex flex-col justify-center items-center text-white
+    @apply absolute h-full w-full z-99 bg-gradient-to-r from-[#5A189A] to-[#3C096C] flex flex-col justify-center items-center text-white gap-10;
+
+    .load {
+      @apply relative h-[100px] w-[60px];
+
+      span {
+        @apply absolute w-full h-full transform rotate-[calc(45deg*var(--i))] top-0 left-0 
+        before:content-[''] before:absolute before:top-0 before:left-0 before:h-3 before:w-3 before:bg-[#EADCFA] before:rounded-lg
+        before:shadow-[0_0_5px_#EADCFA,_0_0_5px_#EADCFA,_0_0_5px_#EADCFA]
+        [animation:scaleOut_2s_linear_infinite]
+        [animation-delay:calc(0.1s*var(--i))];
+      }
+    }
   }
 
+
+
+
+
+  
   /* HEADER */
 
   .sticky {
