@@ -107,8 +107,6 @@ function SectionCard({ currentProject, editCount, found, count}) {
         videoRef.current?.requestFullscreen();
     };
 
-    console.log(currentProject.description.split(" "));
-
     return ( 
         <section className="blur-cont">
             

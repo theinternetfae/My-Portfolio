@@ -135,11 +135,11 @@
     @apply relative z-10 overflow-y-auto h-full w-full rounded-lg transition ease-in-out duration-700 flex flex-col lg:flex-row no-scrollbar;
 
     .project-vid-box, .project-info-box {
-      @apply lg:w-[50%];
+      @apply h-[50%] lg:w-[50%] lg:h-full;
     }
 
     & .project-vid-box {
-      @apply flex flex-col p-[15px] order-0 justify-center gap-4 lg:gap-12 lg:order-1 lg:p-[20px];
+      @apply flex flex-col p-[15px] order-0 justify-around gap-4 lg:gap-12 lg:order-1 lg:p-[20px] lg:justify-center;
    
       .search-box {
         @apply bg-[#524d4b91] h-[35px] flex items-center justify-between rounded-lg p-2 shadow-lg lg:h-[50px];
@@ -171,7 +171,7 @@
     }
 
     & .project-info-box {
-      @apply p-[15px] flex order-1 flex-col gap-2 lg:gap-3 lg:order-0 lg:p-[20px];
+      @apply p-[15px] flex order-1 flex-col gap-2 overflow-y-auto no-scrollbar justify-around lg:gap-3  lg:order-0 lg:p-[20px];
    
       .project-info {
         @apply bg-[#343434be] flex gap-[14px] rounded-lg p-[10px] shadow-lg flex-col backdrop-blur-[10px];
@@ -185,7 +185,7 @@
         }
     
         & .icons {
-          @apply text-[25px] flex gap-[10px];
+          @apply text-[20px] flex gap-[10px] lg:text-[25px];
         }
       }
     }
