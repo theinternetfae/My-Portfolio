@@ -5,6 +5,13 @@
 @import "tailwindcss";
 
 
+
+@theme {
+  --color-dred: #9c0012;
+  --color-red: #d00018;
+}
+
+
 @keyframes scaleOut {
     0% {
         transform: scale(1);
@@ -59,10 +66,10 @@
   }
 
   .loader {
-    @apply absolute h-full w-full z-99 bg-gradient-to-r from-[#5A189A] to-[#3C096C] flex flex-col justify-center items-center text-white gap-10;
+    @apply absolute h-full w-full z-99 bg-gradient-to-r from-[#3C096C] to-[#240046] flex flex-col justify-center items-center text-white gap-10;
 
     .load {
-      @apply relative h-[100px] w-[60px];
+      @apply relative h-[70px] w-[70px] lg:h-[100px] lg:w-[60px];
 
       span {
         @apply absolute w-full h-full transform rotate-[calc(45deg*var(--i))] top-0 left-0 
@@ -72,10 +79,26 @@
         [animation-delay:calc(0.1s*var(--i))];
       }
     }
+
+    p {
+      @apply lg:text-xl;
+    }
   }
 
 
 
+  /*ONLINE*/
+  .online {
+    @apply absolute z-99 h-full w-full flex flex-col items-center justify-center bg-black text-white gap-4;
+
+    .bi {
+      @apply text-dred text-shadow-[0_0_5px_red,_0_0_5px_red,_0_0_5px_red] text-7xl lg:text-9xl;
+    }
+
+    p {
+      @apply font-bold text-center lg:text-2xl;
+    }
+  }
 
 
   
