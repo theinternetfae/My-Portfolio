@@ -77,7 +77,9 @@ body {
   }
 
   .loader {
-    @apply fixed h-full w-full min-h-svh z-50 bg-gradient-to-r from-[#3C096C] to-[#240046] flex flex-col justify-center items-center text-white gap-10;
+    @apply fixed inset-0 z-[999] w-full min-h-svh bg-[#3C096C] flex flex-col justify-center items-center text-white gap-10;
+
+    min-height: 100svh;
 
     .load {
       @apply relative h-[70px] w-[70px] lg:h-[100px] lg:w-[60px];
@@ -107,7 +109,7 @@ body {
     }
 
     p {
-      @apply font-bold text-center lg:text-2xl;
+      @apply font-bold text-center lg:text-xl;
     }
   }
 
@@ -200,7 +202,7 @@ body {
   }
 
   .blur-content {
-    @apply relative z-10 overflow-y-auto h-full w-full rounded-lg transition ease-in-out duration-700 flex flex-col lg:flex-row no-scrollbar;
+    @apply relative z-10 overflow-y-auto h-full w-full rounded-lg transition ease-in-out duration-700 flex flex-col justify-between lg:flex-row no-scrollbar;
 
     .project-vid-box, .project-info-box {
       @apply h-[50%] lg:w-[50%] lg:h-full;
@@ -239,10 +241,10 @@ body {
     }
 
     & .project-info-box {
-      @apply p-[15px] flex order-1 flex-col gap-2 justify-around lg:gap-3 lg:order-0 lg:p-[20px];
+      @apply p-[15px] order-1 flex-col lg:order-0 lg:p-[20px];
    
       .project-info {
-        @apply bg-[#343434be] flex gap-[14px] rounded-lg p-[10px] shadow-lg flex-col backdrop-blur-[10px];
+        @apply bg-[#343434be] flex gap-[14px] rounded-lg p-[10px] shadow-lg flex-col mt-[10px] backdrop-blur-[10px];
     
         h2 {
           @apply font-bold lg:text-lg
