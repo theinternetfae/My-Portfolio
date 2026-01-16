@@ -9,7 +9,7 @@ function Header() {
     return ( 
         <header className="sticky">
             <nav>
-                <img src="/images/Logo-InternetFae.png" alt="" />
+                <a href="https://github.com/theinternetfae" target="_blank"><img src="/images/Logo-InternetFae.png" alt="" /></a>
 
                 <div className="nav-box-sm lg:hidden">
                     <button className="bi bi-list nav-icon" onClick={() => setOptSm(prev => !prev)}></button>
