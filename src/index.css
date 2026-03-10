@@ -293,7 +293,7 @@ body {
   /*ABOUT CARD*/
 
   .blur-about {
-    @apply bg-[rgba(255,255,255,0.15)] mt-10 mx-auto w-[90%] h-[70%] rounded-lg backdrop-blur-[10px] flex flex-col justify-center items-center gap-[15px] shadow-[0_0_0_2px_#9D4EDD,0_0_12px_#7B2CBF,0_0_24px_#5A189A] lg:w-[75%] lg:h-[85%];
+    @apply bg-[rgba(255,255,255,0.15)] backdrop-blur-[10px] mt-10 mx-auto w-[90%] h-[70%] rounded-lg flex flex-col justify-center items-center gap-[15px] shadow-[0_0_0_2px_#9D4EDD,0_0_12px_#7B2CBF,0_0_24px_#5A189A] lg:w-[75%] lg:h-[85%];
 
     h1 {
       @apply font-bold text-2xl lg:text-4xl; 

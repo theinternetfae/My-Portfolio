@@ -14,10 +14,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 
 
-
-
-
-
   //CHECKING IS ONLINE
   useEffect(() => {
 

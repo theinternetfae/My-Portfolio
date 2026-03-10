@@ -7,7 +7,7 @@ export const projects = [
         description: "Optima is a productivity app that analyzes task completion patterns to dynamically adapt its behavior. Its core feature, a self-evolving system, adjusts based on user consistency to encourage sustainable productivity rather than burnout.",
         langTools: ["HTML", "React", "TailwindCSS"],
         gitLink: "https://github.com/theinternetfae/Optima-V.2.git",
-        live: "",
+        live: "https://theinternetfae.github.io/Optima-V.2/",
         border: ['#1097F1', '#0B41C9', '#032C7D']
     },
     {

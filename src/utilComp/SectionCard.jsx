@@ -7,6 +7,10 @@ function SectionCard({ currentProject, editCount, found, count}) {
 
     const [searching, setSearching] = useState("");
     
+    useEffect(() => {
+        console.log(currentProject);
+    }, [currentProject])
+
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -162,10 +166,15 @@ function SectionCard({ currentProject, editCount, found, count}) {
                         <h2>More</h2>
                         <div className="icons">
                             <a href={currentProject.gitLink} target="_blank" title="Github file"><FaGithub /></a>
-                            <FaGlobe style={!currentProject.live ? {
-                                color: "grey",
-                                cursor: "not-allowed"
-                            } : ""} title={`Live view ${!currentProject.live && "(Not available)"}`}/>
+                            <a href={currentProject.live} target="_blank" title={`Live view ${!currentProject.live ? "(Not available)" : ""}`}>
+                                <FaGlobe style={!currentProject.live ? {
+                                    color: "grey",
+                                    cursor: "not-allowed"
+                                } : {
+                                    color: "white",
+                                    cursor: "pointer"
+                                }}/>
+                            </a>
                         </div>
                     </div>
 
