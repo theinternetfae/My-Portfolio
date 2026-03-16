@@ -1,8 +1,13 @@
 function Loader() {
     return ( 
         <section className="loader">
-            
-            <div className="load">
+
+            <img src="images\TheInternetFae-Logo.png" alt="My logo" />
+            <div className="loading-bar">
+                <span className="loading-ball"></span>
+            </div>
+
+            {/* <div className="load">
                 <span style={{"--i": 1}} className="--i"></span>
                 <span style={{"--i": 2}} className="--i:2"></span>
                 <span style={{"--i": 3}} className="--i:3"></span>
@@ -15,7 +20,7 @@ function Loader() {
             
             <p>
                 Please hold on...
-            </p>
+            </p> */}
         
         </section>
     );

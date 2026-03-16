@@ -20,15 +20,20 @@ body {
 @theme {
   --color-dred: #9c0012;
   --color-red: #d00018;
+  --color-background: #CCCCCC;
+  --color-former: #3C096C;
 }
 
 
 @keyframes scaleOut {
     0% {
-        transform: scale(1);
+      translate: 0;
     }
-    80%, 100% {
-        transform: scale(0);
+    50% {
+      translate: 70px;
+    }
+    100% {
+      translate: 0;
     }
 }
 
@@ -70,14 +75,40 @@ body {
   }
 }
 
+@theme {
+  --color-dred: #9c0012;
+  --color-red: #d00018;
+  --color-background: #CCCCCC;
+  --color-former: #3C096C;
+  --color-darkgrey: #919191;
+  --color-mypurple: #7E57C2;
+}
+
 @layer components {
 
-  .test {
+  /* .test {
     @apply relative;
-  }
+  } */
 
   .loader {
-    @apply fixed inset-0 z-[999] w-full min-h-svh bg-[#3C096C] flex flex-col justify-center items-center text-white gap-10;
+    @apply fixed h-full w-full bg-background flex flex-col items-center justify-center gap-4;
+
+    img {
+      @apply w-12;
+    }
+
+    & .loading-bar {
+      @apply border border-2 border-transparent w-20 h-3 shadow-lg rounded-lg bg-darkgrey relative overflow-x-hidden;
+
+      .loading-ball {
+        @apply border border-2 border-mypurple bg-mypurple absolute h-full rounded-full w-2
+        shadow-[0_0_5px_#9D4EDD,_0_0_5px_#9D4EDD,_0_0_5px_#9D4EDD]
+        [animation:scaleOut_2s_linear_infinite];
+      }
+    }
+
+    
+    /* @apply fixed inset-0 z-[999] w-full min-h-svh bg-[#3C096C] flex flex-col justify-center items-center text-white gap-10;
 
     min-height: 100svh;
 
@@ -95,7 +126,7 @@ body {
 
     p {
       @apply lg:text-xl;
-    }
+    } */
   }
 
 
