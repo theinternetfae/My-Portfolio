@@ -9,38 +9,53 @@ function Header() {
     return ( 
         <header className="sticky">
             <nav>
-                <a href="https://github.com/theinternetfae" target="_blank"><img src="./images/Logo-InternetFae.png" alt="" /></a>
 
-                <div className="nav-box-sm lg:hidden">
-                    <button className="bi bi-list nav-icon" onClick={() => setOptSm(prev => !prev)}></button>
+                <a href="https://github.com/theinternetfae" target="_blank">
+                    <div className="logo-n-name">
+                        <img src="images\TheInternetFae-Logo.png" alt="" />
+                        <span>TheInternetFae</span>
+                    </div>
+                </a>
+
+                <div className="about-projects">
+
+                    <Link to="/">
+                        <button className={`${location.pathname === "/" ? "border-b-mypurple text-mypurple" : ""}`}>About Me</button>
+                    </Link>
+
+                    <Link to="/projects">
+                        <button className={`${location.pathname === "/projects" ? "border-b-mypurple text-mypurple" : ""}`}>Projects</button>
+                    </Link>
+
+                </div>
+                
+                <a className="contact-me" href="mailto:favoregwele@gmail.com">
+                    Contact Me
+                </a>
+
+                <div className="nav-box-sm">
+                    <button className="bi bi-list" onClick={() => setOptSm(prev => !prev)}></button>
                     {optSm && (
     
                         <div className="navigating-sm">
 
                             <Link to="/">
-                                <button className={`navigation ${location.pathname === "/" ? "selected-sm" : ""}`} onClick={() => setOptSm(prev => !prev)}>Portfolio</button>
+                                <button className={`navigation ${location.pathname === "/" ? "text-mypurple" : ""}`} onClick={() => setOptSm(prev => !prev)}>About me</button>
                             </Link>
 
-                            <Link to="/about">
-                                <button className={`navigation ${location.pathname === "/about" ? "selected-sm" : ""}`} onClick={() => setOptSm(prev => !prev)}>About me</button>
+                            <Link to="/projects">
+                                <button className={`navigation ${location.pathname === "/projects" ? "text-mypurple" : ""}`} onClick={() => setOptSm(prev => !prev)}>Portfolio</button>
                             </Link>
+
+                            <a className="navigation contact" href="mailto:favoregwele@gmail.com">
+                                Contact Me
+                            </a>
 
                         </div>
 
                     )}
                 </div>                
 
-                <div className="nav-box hidden lg:flex">
-                    
-                    <Link to="/">
-                        <button className={`navigating ${location.pathname === "/" ? "boxy" : ""}`}>Portfolio</button>
-                    </Link>
-
-                    <Link to="/about">
-                        <button className={`navigating ${location.pathname === "/about" ? "boxy" : ""}`}>About me</button>
-                    </Link>
-
-                </div>
             </nav>
         </header>
     );

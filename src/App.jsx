@@ -109,8 +109,8 @@ function App() {
           <Header/>
           
           <Routes location={nextLocation}>
-            <Route path="/" element={<Body />}/>
-            <Route path="/about" element={<About />}/>
+            <Route path="/" element={<About />}/>
+            <Route path="/projects" element={<Body />}/>
           </Routes>
         
         </main>
