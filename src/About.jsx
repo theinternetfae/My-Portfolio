@@ -1,12 +1,125 @@
+import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiAppwrite, SiGithub, SiFigma } from "react-icons/si";
+
 function About() {
+
+    const techIcons = [
+        {
+            Icon: SiHtml5,
+            color: "#E34F26",
+            tool: "HTML"
+        },
+        {
+            Icon: SiCss3,
+            color: "#1572B6",
+            tool: "CSS"
+        },
+        {
+            Icon: SiJavascript,
+            color: "#F7DF1E",
+            tool: "JavaScript"
+        },
+        {
+            Icon: SiReact,
+            color: "#61DAFB",
+            tool: "React"
+        },
+        {
+            Icon: SiTailwindcss,
+            color: "#38BDF8",
+            tool: "TailwindCSS"
+        },
+        {
+            Icon: SiAppwrite,
+            color: "#FD366E",
+            tool: "AppWrite"
+        },
+        {
+            Icon: SiGithub,
+            color: "#181717",
+            tool: "GitHub"
+        },
+        {
+            Icon: SiFigma,
+            color: "#F24E1E",
+            tool: "Figma"
+        }
+    ];
+
+
     return ( 
-        <section className="overall-body">
-            <div className="blur-about">
-                <h1>The Origin Story</h1>
-                <div className="about-desc">
-                    <p>I started learning to code in May 2023 on a whim, I was inspired more by action movies than real understanding, Incredibly silly of me. Regardless of the reality, I fell in love with it. </p>
-                    <p>A month later, an old laptop from my brother gave me access to real tools, and when my sister introduced me to TechItGirls, I finally found structure in my learning.</p> 
-                    <p>Twice, just before major milestones, my laptops failed: one costing me a graduation, and the second nearly making me quit altogether — but with my family’s support, I pushed through, speed-ran a final project in two days, and graduated from TechItGirls in August 2024 as a Frontend Developer. <b/> Since then, I’ve been self-learning and building with HTML, CSS, JavaScript, and React; so far...</p>
+        <section className="about-me">
+            <h1>Hi! I'm <span>TheInternetFae</span></h1>
+
+            <div className="introductory">
+
+                <div className="intro-div">
+                    <img src="public\images\Me.jpg" alt="Me" />
+                </div>
+                
+                <div className="intro-div div-diff">
+
+                    <section>
+                        <span className="span-one">Full name:</span><br/>
+                        <span className="span-two">Favour Egwele</span>
+                    </section>
+
+                    <section>
+                        <span className="span-one">Role:</span><br/>
+                        <span className="span-two">Front-End Developer</span>
+                    </section>
+                
+                </div>
+            </div>
+
+            <div className="desc">
+                <h2>Description:</h2>
+                <div className="full-desc">
+                    <p>I’m a Frontend Developer focused on building clean, thoughtful user experiences with React, JavaScript, HTML, and CSS.</p>
+                    <p>I started learning to code in 2023 and have grown through a mix of structured learning, self-teaching, and real project work. I care deeply about understanding why things work, not just how, making me very passionate and invested in my work.</p>
+                    <p>Right now, I’m building personal projects that showcase my skill and understanding such as <b>Optima</b> and <b>GirlyPop</b> which you can see in my Projects. So far, working on these projects have helped me sharpen my skills in state management, UI logic, and thoughtful UX. I’m especially interested in building clean, maintainable systems and learning how real-world applications are structured behind the scenes.</p>
+                    <p>I’m still early in my journey, but I’m consistent, curious, and not afraid to sit with hard problems until they make sense. I’m excited to keep growing, collaborating, and eventually contributing to teams that value intentional development and continuous learning.</p>
+                    <p>I'm currently seeking out Internship or Junior dev roles where I have guidance on my work and room to grow.</p>
+                </div>
+            </div>
+
+            <div className="my-tools">
+                <h2>My Tools:</h2>
+                <div className="full-tools">
+
+                    {
+                        techIcons.map((t, i) => {
+                            const {Icon, tool, color} = t
+
+                            return <Icon 
+                                key={i} 
+                                style={{ color }} 
+                                title={tool}
+                            />;
+                        })
+                    }
+
+                </div>
+            </div>
+
+            <div className="my-contacts">
+                <h2>My Contacts:</h2>
+                <div className="full-contacts">
+
+                    <div className="contact">
+                        <i class="bi bi-whatsapp"></i>
+                        <p>+234 904 380 9172</p>
+                    </div>
+                
+                    <div className="contact">
+                        <i class="bi bi-github"></i>
+                        <p>theinternetfae | Favour Egwele</p>
+                    </div>
+                    
+                    <div className="contact">
+                        <i class="bi bi-envelope-at-fill"></i>
+                        <p>favoregwele@gmail.com</p>
+                    </div>
+
                 </div>
             </div>
         </section> 

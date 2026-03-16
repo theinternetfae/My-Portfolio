@@ -11,6 +11,7 @@
 html,
 body {
   margin: 0;
+  background: #CCCCCC;
   padding: 0;
   height: 100%;
   overflow-x: hidden;
@@ -38,31 +39,12 @@ body {
 }
 
 .overall-body {
-  background-image: url(/images/purple-on-black.jfif);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 96vh;
+  height: inherit;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: white;
 }
-
-.overall-body h1 {
-  margin-top: 40px;
-}
-
-.overall-body .name {
-  font-family: "Atkinson Hyperlegible Mono", sans-serif;
-  font-weight: bold;
-}
-
-.overall-body h1, .sub-heading {
-  text-align: center;
-  padding: 4px;
-}
-
 
 @utility no-scrollbar {
   -ms-overflow-style: none; 
@@ -76,19 +58,16 @@ body {
 }
 
 @theme {
-  --font-specialtext: "Atkinson Hyperlegible Mono", sans-serif
+  --font-specialtext: "Atkinson Hyperlegible Mono", sans-serif;
 
   --color-background: #CCCCCC;
   --color-former: #3C096C;
-  --color-darkgrey: #919191;
+  --color-darkgrey: #3D3D3D;
   --color-mypurple: #7E57C2;
 }
 
 @layer components {
 
-  /* .test {
-    @apply relative;
-  } */
 
   .loader {
     @apply fixed h-full w-full z-50 bg-background flex flex-col items-center justify-center gap-4;
@@ -103,8 +82,8 @@ body {
       @apply border border-2 border-transparent w-20 h-3 shadow-lg rounded-lg bg-darkgrey relative overflow-x-hidden;
 
       .loading-ball {
-        @apply border border-2 border-mypurple bg-mypurple absolute h-full rounded-full w-2
-        shadow-[0_0_5px_#9D4EDD,_0_0_5px_#9D4EDD,_0_0_5px_#9D4EDD]
+        @apply border border-2 border-[#C2A9EF] bg-[#C2A9EF] absolute h-full rounded-full w-2
+        shadow-[0_0_5px_#C2A9EF,_0_0_5px_#C2A9EF,_0_0_5px_#C2A9EF]
         [animation:leftRight_2s_linear_infinite];
       }
     }
@@ -181,54 +160,93 @@ body {
             }
         }
       }
-
-      /* img {
-        @apply h-[50px] md:h-[65px];
-      }
-
-      & .nav-box-sm {
-        @apply flex flex-col w-25 relative;      
-         
-        .nav-icon {
-          @apply text-[#3F1E83] text-2xl text-end md:text-4xl;
-        } 
-
-        & .navigating-sm {
-          @apply bg-[#8c52ff] w-full flex flex-col gap-2 items-center shadow-lg absolute top-9 z-50 right-[-4px] md:top-12;
-          
-          .navigation {
-            @apply w-[100px] p-2
-          } 
-
-          & .selected-sm {
-            @apply bg-[#2D1E64] shadow-[inset_0_0_5px_rgba(0,0,0,0.5),_0_0_5px_rgba(0,0,0,0.5),_0_0_5px_rgba(0,0,0,0.5)];
-          }
-        }
-      }
-
-      & .nav-box {
-        @apply flex h-[90%] gap-[20px] lg:w-[270px] justify-around items-center;
-   
-        .navigating {
-          @apply text-white font-bold flex items-center justify-center p-2 rounded w-30 bg-[#3F1E83] cursor-pointer hover:-translate-y-0.5 transition ease-in-out duration-300 active:scale-95; 
-        }
-
-        .boxy {
-          @apply shadow-[inset_0_0_5px_rgba(0,0,0,0.5),_0_0_5px_rgba(0,0,0,0.5),_0_0_5px_rgba(0,0,0,0.5)];
-        }
-      } */
     }
   }
 
   
 
+  /*ABOUT ME*/
+  .about-me {
+    @apply h-[96vh] w-full flex flex-col items-center px-6;
 
+    h1 {
+      @apply mt-12 text-center w-75 p-5 bg-white shadow-lg rounded-lg text-xl font-bold
+      lg:mt-16 lg:w-90 lg:text-2xl;
 
+      span {
+        @apply text-mypurple font-specialtext;
+      }
+    }
+
+    & .introductory {
+      @apply w-full mt-6 flex flex-col items-center;
+
+      .intro-div {
+        @apply w-[50%] flex justify-center;
+      
+        img {
+          @apply h-70 w-95 rounded-full
+        }
+      }
+
+      .div-diff {
+        @apply gap-10 w-full mt-4; 
+
+        section {
+          @apply w-[30%] bg-white p-6 rounded-lg shadow-lg text-center font-bold;
+
+          .span-one {
+            @apply text-mypurple
+          }
+        }
+      }
+    }
+
+    & .desc {
+      @apply w-[95%] mt-6 p-4 rounded-lg bg-white shadow-lg;
+
+      h2 {
+        @apply font-bold;
+      }
+
+      .full-desc {
+        @apply mt-4 flex flex-col gap-4 cursor-default
+      }
+    }
+
+    & .my-tools {
+      @apply w-[95%] mt-6 p-4 rounded-lg bg-white shadow-lg;
+
+      h2 {
+        @apply font-bold;
+      }
+
+      .full-tools {
+        @apply flex text-4xl gap-8 mt-4
+      }
+    }
+
+    & .my-contacts {
+      @apply w-[95%] mt-6 p-4 rounded-lg bg-white shadow-lg;
+
+      h2 {
+        @apply font-bold;
+      }
+
+      .full-contacts {
+        @apply flex flex-col gap-4 mt-4 cursor-pointer;
+
+        .contact {
+          @apply flex gap-2
+        }
+      }
+    }
+  }
 
 
   /* OVERALL-BODY */
 
-  .overall-body {
+  /* .overall-body {
 
     h1 {
       @apply text-xl md:text-3xl;
@@ -242,7 +260,7 @@ body {
       }
     }
 
-  }
+  } */
 
 
 
@@ -344,23 +362,5 @@ body {
     }
   }
 
-
-
-
-
-
-  /*ABOUT CARD*/
-
-  .blur-about {
-    @apply bg-[rgba(255,255,255,0.15)] backdrop-blur-[10px] mt-10 mx-auto w-[90%] h-[70%] rounded-lg flex flex-col justify-center items-center gap-[15px] shadow-[0_0_0_2px_#9D4EDD,0_0_12px_#7B2CBF,0_0_24px_#5A189A] lg:w-[75%] lg:h-[85%];
-
-    h1 {
-      @apply font-bold text-2xl lg:text-4xl; 
-    }
-
-    .about-desc {
-      @apply bg-[#343434be] h-[75%] w-[95%] rounded-lg p-[12px] text-[16px] shadow-lg backdrop-blur-[10px] font-['Courier_New',Courier,monospace] flex flex-col gap-2 text-center overflow-y-auto no-scrollbar lg:h-[60%] lg:w-[80%] lg:text-[20px];
-    }
-  }
 
 }
