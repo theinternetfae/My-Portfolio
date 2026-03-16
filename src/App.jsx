@@ -99,13 +99,7 @@ function App() {
   return (
     <>
 
-      <main>
-
-        <Loader/>
-
-      </main>
-
-      {/* {!isOnline ? (
+      {!isOnline ? (
         <Offline/>
       ) : 
       (
@@ -121,7 +115,7 @@ function App() {
         
         </main>
 
-      )} */}
+      )}
 
     </>
   )
