@@ -105,20 +105,27 @@ function About() {
                 <h2>My Contacts:</h2>
                 <div className="full-contacts">
 
-                    <div className="contact">
-                        <i class="bi bi-whatsapp"></i>
-                        <p>+234 904 380 9172</p>
-                    </div>
-                
-                    <div className="contact">
-                        <i class="bi bi-github"></i>
-                        <p>theinternetfae | Favour Egwele</p>
-                    </div>
-                    
-                    <div className="contact">
-                        <i class="bi bi-envelope-at-fill"></i>
-                        <p>favoregwele@gmail.com</p>
-                    </div>
+                    <a href="https://wa.me/+2349043809172" target="_blank">
+                        <div className="contact">
+                            <i className="bi bi-whatsapp"></i>
+                            <p>+234 904 380 9172</p>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/theinternetfae" target="_blank">
+                        <div className="contact">
+                            <i className="bi bi-github"></i>
+                            <p>theinternetfae | Favour Egwele</p>
+                        </div>
+
+                    </a>
+
+                    <a href="mailto:favoregwele@gmail.com">
+                        <div className="contact">
+                            <i className="bi bi-envelope-at-fill"></i>
+                            <p>favoregwele@gmail.com</p>
+                        </div>
+                    </a>
 
                 </div>
             </div>

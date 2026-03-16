@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import ContactCard from "./ContactCard.jsx";
 
 function Header() {
 
     const [optSm, setOptSm] = useState(false);
+    const [contactDeets, setContactDeets] = useState(false);
     const location = useLocation();
 
     return ( 
@@ -29,9 +31,12 @@ function Header() {
 
                 </div>
                 
-                <a className="contact-me" href="mailto:favoregwele@gmail.com">
+                <button className="contact-me" onClick={(e) => {
+                    e.preventDefault();
+                    setContactDeets(prev => !prev);
+                }}>
                     Contact Me
-                </a>
+                </button>
 
                 <div className="nav-box-sm">
                     <button className="bi bi-list" onClick={() => setOptSm(prev => !prev)}></button>
@@ -47,9 +52,12 @@ function Header() {
                                 <button className={`navigation ${location.pathname === "/projects" ? "text-mypurple" : ""}`} onClick={() => setOptSm(prev => !prev)}>Portfolio</button>
                             </Link>
 
-                            <a className="navigation contact" href="mailto:favoregwele@gmail.com">
+                            <button className="navigation contact" onClick={(e) => {
+                                e.preventDefault();
+                                setContactDeets(prev => !prev);
+                            }}>
                                 Contact Me
-                            </a>
+                            </button>
 
                         </div>
 
@@ -57,6 +65,8 @@ function Header() {
                 </div>                
 
             </nav>
+
+            {contactDeets && <ContactCard close={() => setContactDeets(prev => !prev)}/>}
         </header>
     );
 }

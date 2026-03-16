@@ -234,15 +234,44 @@ body {
       }
 
       .full-contacts {
-        @apply flex flex-col gap-4 mt-4 cursor-pointer;
+        @apply flex flex-col gap-4 mt-4;
 
         .contact {
-          @apply flex gap-2
+          @apply flex gap-2 cursor-pointer;
         }
       }
     }
   }
 
+  .contact-card {
+    @apply bg-black/1 backdrop-blur-sm border border-2 fixed w-full top-0 h-full z-50 flex justify-center items-center;
+
+    .contact-deets {
+      @apply border border-2 p-6 w-[40%] h-[60%] bg-white shadow-lg rounded-lg border-mypurple flex flex-col items-center;
+
+      .leave-deets {
+        @apply w-full text-end cursor-pointer text-xl transition ease-in-out duration-300
+        hover:text-mypurple;
+      }
+
+      h1 {
+        @apply text-4xl font-bold text-mypurple;
+      }
+
+      .full-contacts {
+        @apply w-full mt-8 flex flex-col gap-6 items-center;
+
+        .contact {
+          @apply flex flex-col items-center cursor-pointer border border-2 w-70 rounded-lg bg-mypurple text-white shadow-lg p-2 transition ease-in-out duration-300
+          hover:bg-white hover:text-mypurple active:scale-90;
+
+          .cont-icon {
+            @apply text-2xl;
+          }
+        }
+      }
+    }
+  }
 
   /* OVERALL-BODY */
 
