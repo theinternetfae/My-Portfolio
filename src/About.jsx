@@ -52,8 +52,8 @@ function About() {
 
             <div className="introductory">
 
-                <div className="intro-div">
-                    <img src="public\images\Me.jpg" alt="Me" />
+                <div className="intro-div img-div">
+                    <img src="public\images\Me.jpg" alt="My picture" />
                 </div>
                 
                 <div className="intro-div div-diff">

@@ -63,6 +63,7 @@ body {
   --color-background: #CCCCCC;
   --color-former: #3C096C;
   --color-darkgrey: #3D3D3D;
+  --color-grey: #919191;
   --color-mypurple: #7E57C2;
 }
 
@@ -167,7 +168,7 @@ body {
 
   /*ABOUT ME*/
   .about-me {
-    @apply h-[96vh] w-full flex flex-col items-center px-6;
+    @apply w-full flex flex-col items-center px-6 mb-4;
 
     h1 {
       @apply mt-12 text-center w-75 p-5 bg-white shadow-lg rounded-lg text-xl font-bold
@@ -183,9 +184,13 @@ body {
 
       .intro-div {
         @apply w-[50%] flex justify-center;
-      
+      }
+
+      .img-div {
+        @apply w-70 h-70 rounded-full bg-grey;
+
         img {
-          @apply h-70 w-95 rounded-full
+          @apply w-full h-full object-cover rounded-full
         }
       }
 
@@ -250,7 +255,7 @@ body {
       @apply border border-2 p-6 w-[40%] h-[60%] bg-white shadow-lg rounded-lg border-mypurple flex flex-col items-center;
 
       .leave-deets {
-        @apply w-full text-end cursor-pointer text-xl transition ease-in-out duration-300
+        @apply w-full text-end text-grey cursor-pointer text-xl transition ease-in-out duration-300
         hover:text-mypurple;
       }
 
@@ -267,7 +272,7 @@ body {
 
           .cont-icon {
             @apply text-2xl;
-          }
+          } 
         }
       }
     }
