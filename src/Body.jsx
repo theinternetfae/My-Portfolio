@@ -22,9 +22,9 @@ function Body() {
             <h1>My Projects</h1>
     
             <div className="project-cards">
-                {projects.map((project, i) => {
+                {projects.map((project) => {
                     return <SectionCard
-                        key={i}
+                        key={project.id}
                         project={project}
                     />
                 })}          

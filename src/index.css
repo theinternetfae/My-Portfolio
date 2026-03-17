@@ -295,6 +295,7 @@ body {
     }
   }
 
+  /*CONTACT-CARD*/
   .contact-card {
     @apply bg-black/1 backdrop-blur-sm border border-2 fixed w-full top-0 h-full z-50 flex justify-center items-center;
 
@@ -329,6 +330,7 @@ body {
   }
 
 
+  /*PROJECTS-BODY*/
   .projects-body {
     @apply h-full w-full px-6 flex flex-col items-center;
 
@@ -342,7 +344,16 @@ body {
     }
   }
 
+  .card-container {
+    .back {
+      @apply flex-col gap-6;
 
+      .contact {
+        @apply flex border border-2 p-4 w-70 items-center justify-center gap-2 rounded-lg bg-mypurple text-white shadow-lg cursor-pointer
+        hover:bg-white hover:text-mypurple active:scale-90
+      }
+    }
+  }
 
   /* OVERALL-BODY */
 
