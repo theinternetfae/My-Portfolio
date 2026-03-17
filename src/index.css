@@ -38,12 +38,49 @@ body {
     }
 }
 
-.overall-body {
-  height: inherit;
+.card-container {
+  perspective: 1500px;
+  width: 25%;
+}
+
+.card {
+  width: 100%;
+  height: 500px;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 0.6s
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+
+.front {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: white;
+  transform: rotateY(0deg);
+}
+
+.front img {
+  object-fit: cover;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
 }
 
 @utility no-scrollbar {
@@ -299,9 +336,11 @@ body {
       @apply mt-12 text-center w-75 text-mypurple p-5 bg-white shadow-lg rounded-lg text-xl font-bold
       lg:mt-16 lg:w-90 lg:text-2xl;
     }
+
+    .project-cards {
+      @apply w-full mt-4 p-4 flex gap-4;
+    }
   }
-
-
 
 
 

@@ -20,6 +20,15 @@ function Body() {
         <section className="projects-body">
     
             <h1>My Projects</h1>
+    
+            <div className="project-cards">
+                {projects.map((project, i) => {
+                    return <SectionCard
+                        key={i}
+                        project={project}
+                    />
+                })}          
+            </div>
             {/* <h1>Hi, I'm <span className="name">TheInternetFae</span></h1>
                 <p className="sub-heading">Welcome to my portfolio!</p>
         
