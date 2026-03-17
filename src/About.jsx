@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiAppwrite, SiGithub, SiFigma } from "react-icons/si";
 
 function About() {
@@ -45,6 +46,7 @@ function About() {
         }
     ];
 
+    const [expanded, setExpanded] = useState(false);
 
     return ( 
         <section className="about-me">
@@ -76,9 +78,16 @@ function About() {
                 <div className="full-desc">
                     <p>I’m a Frontend Developer focused on building clean, thoughtful user experiences with React, JavaScript, HTML, and CSS.</p>
                     <p>I started learning to code in 2023 and have grown through a mix of structured learning, self-teaching, and real project work. I care deeply about understanding why things work, not just how, making me very passionate and invested in my work.</p>
-                    <p>Right now, I’m building personal projects that showcase my skill and understanding such as <b>Optima</b> and <b>GirlyPop</b> which you can see in my Projects. So far, working on these projects have helped me sharpen my skills in state management, UI logic, and thoughtful UX. I’m especially interested in building clean, maintainable systems and learning how real-world applications are structured behind the scenes.</p>
-                    <p>I’m still early in my journey, but I’m consistent, curious, and not afraid to sit with hard problems until they make sense. I’m excited to keep growing, collaborating, and eventually contributing to teams that value intentional development and continuous learning.</p>
-                    <p>I'm currently seeking out Internship or Junior dev roles where I have guidance on my work and room to grow.</p>
+                    
+                    {expanded && (
+                        <>
+                            <p>Right now, I’m building personal projects that showcase my skill and understanding such as <b>Optima</b> and <b>GirlyPop</b> which you can see in my Projects. So far, working on these projects have helped me sharpen my skills in state management, UI logic, and thoughtful UX. I’m especially interested in building clean, maintainable systems and learning how real-world applications are structured behind the scenes.</p>
+                            <p>I’m still early in my journey, but I’m consistent, curious, and not afraid to sit with hard problems until they make sense. I’m excited to keep growing, collaborating, and eventually contributing to teams that value intentional development and continuous learning.</p>
+                            <p>I'm currently seeking out Internship or Junior dev roles where I have guidance on my work and room to grow.</p>
+                        </>
+                    )}
+
+                    <span onClick={() => setExpanded(prev => !prev)}>{expanded ? "See less..." : "See more..."}</span>
                 </div>
             </div>
 
