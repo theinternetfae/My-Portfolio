@@ -187,7 +187,8 @@ body {
       }
 
       .img-div {
-        @apply w-70 h-70 rounded-full bg-grey;
+        @apply w-50 h-50 rounded-full bg-grey
+        lg:w-70 lg:h-70;
 
         img {
           @apply w-full h-full object-cover rounded-full
@@ -195,10 +196,12 @@ body {
       }
 
       .div-diff {
-        @apply gap-10 w-full mt-4; 
+        @apply gap-10 w-full mt-4 flex flex-col items-center
+        lg:flex-row;  
 
         section {
-          @apply w-[30%] bg-white p-6 rounded-lg shadow-lg text-center font-bold;
+          @apply w-[60%] bg-white p-6 rounded-lg shadow-lg text-center font-bold text-sm
+          lg:w-[30%] lg:text-base;
 
           .span-one {
             @apply text-mypurple
@@ -208,7 +211,8 @@ body {
     }
 
     & .desc {
-      @apply w-[95%] mt-6 p-4 rounded-lg bg-white shadow-lg;
+      @apply w-[95%] mt-6 p-4 rounded-lg bg-white shadow-lg text-sm 
+      lg:text-base;
 
       h2 {
         @apply font-bold;
@@ -223,16 +227,18 @@ body {
       @apply w-[95%] mt-6 p-4 rounded-lg bg-white shadow-lg;
 
       h2 {
-        @apply font-bold;
+        @apply font-bold text-sm
+        lg:text-base;
       }
 
       .full-tools {
-        @apply flex text-4xl gap-8 mt-4
+        @apply flex shrink-0 gap-8 mt-4 overflow-x-auto text-[40px];
       }
     }
 
     & .my-contacts {
-      @apply w-[95%] mt-6 p-4 rounded-lg bg-white shadow-lg;
+      @apply w-[95%] text-sm mt-6 p-4 rounded-lg bg-white shadow-lg
+      lg:text-base;
 
       h2 {
         @apply font-bold;
@@ -252,7 +258,8 @@ body {
     @apply bg-black/1 backdrop-blur-sm border border-2 fixed w-full top-0 h-full z-50 flex justify-center items-center;
 
     .contact-deets {
-      @apply border border-2 p-6 w-[40%] h-[60%] bg-white shadow-lg rounded-lg border-mypurple flex flex-col items-center;
+      @apply border border-2 p-6 bg-white shadow-lg rounded-lg border-mypurple flex flex-col items-center
+      lg:w-[40%] lg:h-[60%];
 
       .leave-deets {
         @apply w-full text-end text-grey cursor-pointer text-xl transition ease-in-out duration-300
@@ -260,15 +267,17 @@ body {
       }
 
       h1 {
-        @apply text-4xl font-bold text-mypurple;
+        @apply text-2xl font-bold text-mypurple
+        lg:text-4xl;
       }
 
       .full-contacts {
         @apply w-full mt-8 flex flex-col gap-6 items-center;
 
         .contact {
-          @apply flex flex-col items-center cursor-pointer border border-2 w-70 rounded-lg bg-mypurple text-white shadow-lg p-2 transition ease-in-out duration-300
-          hover:bg-white hover:text-mypurple active:scale-90;
+          @apply flex flex-col text-sm w-60 items-center cursor-pointer border border-2 rounded-lg bg-mypurple text-white shadow-lg p-2 transition ease-in-out duration-300
+          hover:bg-white hover:text-mypurple active:scale-90
+          lg:w-70 lg:text-base;
 
           .cont-icon {
             @apply text-2xl;
@@ -277,6 +286,20 @@ body {
       }
     }
   }
+
+
+  .projects-body {
+    @apply h-full w-full px-6 flex flex-col items-center;
+
+    h1 {
+      @apply mt-12 text-center w-75 text-mypurple p-5 bg-white shadow-lg rounded-lg text-xl font-bold
+      lg:mt-16 lg:w-90 lg:text-2xl;
+    }
+  }
+
+
+
+
 
   /* OVERALL-BODY */
 

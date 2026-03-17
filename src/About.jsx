@@ -91,6 +91,7 @@ function About() {
                             const {Icon, tool, color} = t
 
                             return <Icon 
+                                className="icon"
                                 key={i} 
                                 style={{ color }} 
                                 title={tool}
