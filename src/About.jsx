@@ -91,7 +91,7 @@ function About() {
                 </div>
             </div>
 
-            <div className="my-tools">
+            <div className="desc">
                 <h2>My Tools:</h2>
                 <div className="full-tools">
 
@@ -111,7 +111,7 @@ function About() {
                 </div>
             </div>
 
-            <div className="my-contacts">
+            <div className="desc">
                 <h2>My Contacts:</h2>
                 <div className="full-contacts">
 

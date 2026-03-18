@@ -55,6 +55,7 @@ function Header() {
                             <button className="navigation contact" onClick={(e) => {
                                 e.preventDefault();
                                 setContactDeets(prev => !prev);
+                                setOptSm(prev => !prev);
                             }}>
                                 Contact Me
                             </button>

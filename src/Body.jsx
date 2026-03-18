@@ -7,10 +7,6 @@ function Body() {
 
     const [currentProject, setCurrentProject] = useState(null);
 
-    useEffect(() => {
-        console.log("Current Project About:", currentProject);
-    }, [currentProject])
-
     return ( 
 
         <section className="projects-body">
