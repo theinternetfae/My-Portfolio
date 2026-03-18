@@ -32,7 +32,7 @@ function About() {
         {
             Icon: SiAppwrite,
             color: "#FD366E",
-            tool: "AppWrite"
+            tool: "Appwrite"
         },
         {
             Icon: SiGithub,

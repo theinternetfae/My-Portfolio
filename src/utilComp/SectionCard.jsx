@@ -1,36 +1,4 @@
-import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiPython } from "react-icons/si";
-import { FaGithub, FaGlobe } from "react-icons/fa";
-import { projects } from "../jsFiles/projects.js";
-import { useState, useRef, useEffect, useMemo } from "react";
-
-function SectionCard({project}) {
-
-    // const techIcons = {
-    //     HTML: {
-    //         Icon: SiHtml5,
-    //         color: "#E34F26"
-    //     },
-    //     React: {
-    //         Icon: SiReact,
-    //         color: "#61DAFB"
-    //     },
-    //     TailwindCSS: {
-    //         Icon: SiTailwindcss,
-    //         color: "#38BDF8"
-    //     },
-    //     JavaScript: {
-    //         Icon: SiJavascript,
-    //         color: "#F7DF1E"
-    //     },
-    //     CSS: {
-    //         Icon: SiCss3,
-    //         color: "#1572B6"
-    //     },
-    //     Python: {
-    //         Icon: SiPython,
-    //         color: "#3776AB"
-    //     }
-    // };
+function SectionCard({project, aboutProject}) {
 
     return ( 
         <section className="card-container">
@@ -49,7 +17,10 @@ function SectionCard({project}) {
                 }}> 
 
 
-                    <button>
+                    <button onClick={(e) => {
+                        e.preventDefault();
+                        aboutProject(project);
+                    }}>
                         <div className="contact" 
                         title="A quick skim of the project and its features"
                         >
@@ -71,7 +42,7 @@ function SectionCard({project}) {
 
                     <a href={project.live} target="_blank">
                         <button className={`contact ${!project.live && "border-white bg-grey hover:text-white cursor-not-allowed"}`} 
-                        title={!project.live ? "Live project unavailable" : "See the Live project"}
+                        title={!project.live ? "Live project coming soon!" : "See the Live project"}
                         disabled={!project.live}
                         >
                             <i className="bi bi-globe2"></i>

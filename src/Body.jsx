@@ -1,69 +1,63 @@
 import { projects } from "./jsFiles/projects.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SectionCard from "./utilComp/SectionCard.jsx";
-import NotFound from "./utilComp/NotFound.jsx";
+import AboutProject from "./utilComp/AboutProject.jsx"
 
 function Body() {
-    const [projectCount, setProjectCount] = useState(0);
-    const [found, setFound] = useState(false);
-    const currentProject = projects[projectCount];
 
-    function backward() {
-        setProjectCount(prev => Math.max(prev - 1, 0));
-    }
+    const [currentProject, setCurrentProject] = useState(null);
 
-    function forward() {
-        setProjectCount(prev => Math.min(prev + 1, projects.length - 1));
-    }
+    useEffect(() => {
+        console.log("Current Project About:", currentProject);
+    }, [currentProject])
 
     return ( 
+
         <section className="projects-body">
-    
-            <h1>My Projects</h1>
-    
-            <div className="project-cards">
-                {projects.map((project) => {
-                    return <SectionCard
-                        key={project.id}
-                        project={project}
-                    />
-                })}          
+
+            <div className={`back-cont ${!currentProject && "hidden"}`}>
+
+                <button 
+                    className="bi bi-arrow-left-square-fill go-back"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setCurrentProject(null);
+                    }}
+                ></button>
+
             </div>
-            {/* <h1>Hi, I'm <span className="name">TheInternetFae</span></h1>
-                <p className="sub-heading">Welcome to my portfolio!</p>
-        
-                <section className="project-body">
 
-                    {!found ? <i 
-                        className="bi-caret-left-fill arrow"
-                        onClick={() => backward()}
-                        style={ projectCount === 0 ? {
-                            cursor: "not-allowed",
-                            color: "grey"
-                        } : undefined}
-                    ></i> : ""}
+            {
+                currentProject ? (
+                    <>
+                        <h1 style={{
+                            color: currentProject.border[1]
+                        }}>{currentProject.name}</h1>
 
-                    {!found ? <SectionCard 
-                        currentProject={currentProject}
-                        editCount={setProjectCount}
-                        found={setFound}
-                        count={projectCount}
-                    /> : <NotFound
-                        found={setFound}
-                    /> 
-                    }
+                        <div className="project-about">
+                            <AboutProject
+                                project={currentProject}
+                            />
+                        </div>
+                    </>
+                ) : (
 
-                    {!found ? <i 
-                        className="bi-caret-right-fill arrow"
-                        onClick={() => forward()}
-                        style={ projectCount === projects.length - 1 ? {
-                            cursor: "not-allowed",
-                            color: "grey"
-                        } : undefined}
-                    ></i> : ""}
+                    <>
+                        <h1 className={`${!currentProject && "mt-12 lg:mt-14"}`}>My Projects</h1>
+                
+                        <div className="project-cards">
+                            {projects.map((project) => {
+                                return <SectionCard
+                                    key={project.id}
+                                    project={project}
+                                    aboutProject={(project) => setCurrentProject(project)}
+                                />
+                            })}          
+                        </div>                    
+                    </>
 
-                </section>
-            */}
+                )
+            }
         </section>
     );
 }
