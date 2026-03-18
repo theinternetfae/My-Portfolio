@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiAppwrite, SiGithub, SiFigma } from "react-icons/si";
 
 function About() {
@@ -55,7 +55,7 @@ function About() {
             <div className="introductory">
 
                 <div className="intro-div img-div">
-                    <img src="public\images\Me.jpg" alt="My picture" />
+                    <img src="./images/Me.jpg" alt="My picture" />
                 </div>
                 
                 <div className="intro-div div-diff">

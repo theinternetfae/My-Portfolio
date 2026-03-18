@@ -49,7 +49,7 @@ function Header() {
                             </Link>
 
                             <Link to="/projects">
-                                <button className={`navigation ${location.pathname === "/projects" ? "text-mypurple" : ""}`} onClick={() => setOptSm(prev => !prev)}>Portfolio</button>
+                                <button className={`navigation ${location.pathname === "/projects" ? "text-mypurple" : ""}`} onClick={() => setOptSm(prev => !prev)}>Projects</button>
                             </Link>
 
                             <button className="navigation contact" onClick={(e) => {

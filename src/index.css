@@ -273,7 +273,7 @@ body {
 
   /*CONTACT-CARD*/
   .contact-card {
-    @apply bg-black/1 backdrop-blur-sm border border-2 fixed w-full top-0 h-full z-50 flex justify-center items-center;
+    @apply bg-black/1 backdrop-blur-sm fixed w-full top-0 h-full z-50 flex justify-center items-center;
 
     .contact-deets {
       @apply border border-2 p-6 bg-white shadow-lg rounded-lg border-mypurple flex flex-col items-center
