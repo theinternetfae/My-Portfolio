@@ -3,7 +3,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 
 
 function AboutProject({project}) {
-    const {banner, description, langTools, gitLink, live, name} = project;
+    const {banner, description, problem, solution, features, challenges, langTools, gitLink, live, name} = project;
 
     const techIcons = [
         {
@@ -48,14 +48,41 @@ function AboutProject({project}) {
             </div>
 
             <div className="desc">
-                <h2>Description:</h2>
+                <h2>Problem:</h2>
                 <div className="full-desc">
-                    {description}
+                    {problem}
                 </div>
             </div>
 
             <div className="desc">
-                <h2>Tools:</h2>
+                <h2>Solution:</h2>
+                <div className="full-desc">
+                    {solution}
+                </div>
+            </div>
+
+            <div className="desc">
+                <h2>Features:</h2>
+                <div className="full-feats">
+                    <ol>
+                        {
+                            features.map((f, i) => {
+                                return <li key={i}>{f}</li>
+                            })
+                        }
+                    </ol>
+                </div>
+            </div>
+
+            <div className="desc">
+                <h2>Challenges:</h2>
+                <div className="full-desc">
+                    {challenges}
+                </div>
+            </div>
+
+            <div className="desc">
+                <h2>Tech stack:</h2>
                 <div className="full-tools">
                     {
                         techIcons.map(I => {

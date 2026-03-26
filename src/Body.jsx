@@ -30,6 +30,8 @@ function Body() {
                             color: currentProject.border[1]
                         }}>{currentProject.name}</h1>
 
+                        <h3>{currentProject.subtitle}</h3>
+
                         <div className="project-about">
                             <AboutProject
                                 project={currentProject}

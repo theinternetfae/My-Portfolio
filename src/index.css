@@ -327,6 +327,10 @@ body {
       lg:mt-4 lg:w-90 lg:text-2xl;
     }
 
+    h3 {
+      @apply mt-2 text-center p-4 bg-white shadow-lg rounded-lg
+    }
+
     .project-cards {
       @apply w-full mt-4 p-4 flex gap-4;
     }
@@ -359,6 +363,12 @@ body {
 
             span {
               @apply text-mypurple font-bold cursor-pointer;
+            }
+          }
+
+          .full-feats {
+            ol {
+              @apply flex flex-col gap-4 list-disc p-4;
             }
           }
 
