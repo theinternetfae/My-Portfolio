@@ -76,14 +76,18 @@ function About() {
             <div className="desc">
                 <h2>Description:</h2>
                 <div className="full-desc">
-                    <p>I’m a Frontend Developer focused on building clean, thoughtful user experiences with React, JavaScript, HTML, and CSS.</p>
-                    <p>I started learning to code in 2023 and have grown through a mix of structured learning, self-teaching, and real project work. I care deeply about understanding why things work, not just how, making me very passionate and invested in my work.</p>
+                    
+                    <p>I’m a Frontend Developer focused on building responsive, user-friendly web applications using React, JavaScript, HTML, and CSS.</p>
+
+                    <p>I specialize in creating clean interfaces backed by thoughtful UI logic and solid state management, with a strong focus on usability and real-world functionality.</p>
                     
                     {expanded && (
                         <>
-                            <p>Right now, I’m building personal projects that showcase my skill and understanding such as <b>Optima</b> and <b>GirlyPop</b> which you can see in my Projects. So far, working on these projects have helped me sharpen my skills in state management, UI logic, and thoughtful UX. I’m especially interested in building clean, maintainable systems and learning how real-world applications are structured behind the scenes.</p>
-                            <p>I’m still early in my journey, but I’m consistent, curious, and not afraid to sit with hard problems until they make sense. I’m excited to keep growing, collaborating, and eventually contributing to teams that value intentional development and continuous learning.</p>
-                            <p>I'm currently seeking out Internship or Junior dev roles where I have guidance on my work and room to grow.</p>
+                            <p>I’ve built projects like Optima, a task management app with Appwrite integration, where I handled authentication, data persistence, and dynamic UI updates. Through projects like this, I’ve developed a deeper understanding of how frontend systems connect to real backends and how to structure scalable, maintainable code.</p>
+
+                            <p>I care about understanding how things work under the hood, not just making them work. This pushes me to write better, more intentional code and continuously improve my approach.</p>
+
+                            <p>I’m currently seeking internship or junior frontend roles where I can contribute, learn from experienced developers, and grow in a collaborative environment.</p>
                         </>
                     )}
 
