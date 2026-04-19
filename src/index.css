@@ -103,6 +103,14 @@ body {
 
 @layer components {
 
+  .landing-page {
+    @apply fixed top-0 z-50 w-full h-full bg-background;
+  }
+
+
+
+
+
   .loader {
     @apply fixed h-full w-full z-50 bg-background flex flex-col items-center justify-center gap-4;
     min-height: 100svh;

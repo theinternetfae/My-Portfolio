@@ -1,5 +1,6 @@
 import Header from "./utilComp/Header.jsx";
 import Body from "./Body.jsx";
+import Landing from "./Landing.jsx";
 import About from "./About.jsx"
 import Loader from "./utilComp/Loader.jsx"
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -107,11 +108,15 @@ function App() {
         <main className='test'>
           {loading ? <Loader/> : ''}
           <Header/>
-          
-          <Routes location={nextLocation}>
+
+          <Landing/>
+        
+                  
+          {/* <Routes location={nextLocation}>
             <Route path="/" element={<About />}/>
             <Route path="/projects" element={<Body />}/>
-          </Routes>
+          </Routes>  */}
+        
         
         </main>
 
