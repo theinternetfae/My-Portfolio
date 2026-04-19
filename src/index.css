@@ -11,10 +11,17 @@
 html,
 body {
   margin: 0;
-  background: #CCCCCC;
   padding: 0;
   height: 100%;
   overflow-x: hidden;
+}
+
+.landing-page {
+  background: #CCCCCC;
+  background-image: url(../public/images/Portfolio-bg-design.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -104,7 +111,56 @@ body {
 @layer components {
 
   .landing-page {
-    @apply fixed top-0 z-50 w-full h-full bg-background;
+    @apply fixed top-0 z-50 w-full h-full p-10;
+
+    .name-cont {
+      @apply border border-t-transparent border-x-transparent border-4 w-[60%] border-white;
+
+      p {
+        @apply p-2 border border-2 text-center w-[30%] bg-white rounded-lg font-bold mb-2 border-mypurple;
+
+        span {
+          @apply text-mypurple;
+        }
+      }
+    }
+
+    & .title-cont {
+      @apply border border-2 w-[40%] mt-4 text-center text-2xl font-bold bg-white rounded-lg p-2 text-mypurple
+    }
+
+    & .main {
+      @apply mt-2 h-[85%] flex flex-col items-center justify-around; 
+
+      .img-cont {
+        @apply shadow-lg w-[20%] h-[30%] rounded-full;
+
+        img {
+          @apply object-cover h-full w-full rounded-full
+        }
+      }
+
+      & h1 {
+        @apply border border-2 w-[60%] text-center text-7xl font-bold text-mypurple bg-white p-4 rounded-xl;
+      }
+
+      & .land-directions {
+        @apply w-[60%] flex justify-around;
+
+        button {
+          @apply p-4 border border-2 w-[20%] rounded-lg text-lg shadow-lg font-bold cursor-pointer transition ease-in-out duration-300
+          active:scale-90;
+        }
+
+        & .about {
+          @apply bg-white text-mypurple;
+        }
+
+        & .projects {
+          @apply bg-mypurple text-white;
+        }
+      }
+    }
   }
 
 
