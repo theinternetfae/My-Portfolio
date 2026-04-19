@@ -5,13 +5,13 @@ export const projects = [
         subtitle: "An adaptive productivity app",
         banner: "./images/Optima-Logo.png",
         problem: "Most productivity apps treat all users the same, encouraging rigid task tracking that often leads to inconsistency or burnout. They don’t adapt to how users actually behave over time.",
-        solution: "Optima is a productivity app that optionally analyzes task completion patterns and dynamically adjusts its behavior based on user consistency. Instead of enforcing a fixed system, it introduces a self-evolving approach that encourages sustainable productivity by responding to how users interact with their tasks. That is, it reduces or increases task load based on completion trends",
+        solution: "Optima is a productivity app that optionally analyzes task completion patterns and dynamically adjusts its behavior based on user consistency. Instead of enforcing a fixed system, it introduces a self-evolving approach that encourages sustainable productivity by responding to how users interact with their tasks. That is, it reduces or increases task capacity based on the users completion trends.",
         features: ["Dynamic task system that adapts based on user completion patterns", "Real-time data persistence and syncing using Appwrite", "User authentication for personalized task management", "Smart feedback loop that adjusts expectations based on consistency", "Clean, responsive UI designed for ease of use across devices"],
         challenges: "Built a system that responds to user behavior over time, which required managing asynchronous data, structuring state effectively, and designing UI logic that reflects changing conditions without breaking user experience.",
         langTools: ["HTML", "React", "TailwindCSS", "Appwrite"],
         gitLink: "https://github.com/theinternetfae/Optima-V.2.git",
         live: "https://theinternetfae.github.io/Optima-V.2/",
-        border: ['#60A5FA', '#032C7D']
+        border: ['#60A5FA', '#032C7D'],
     },
     {
         id: 1,
@@ -24,7 +24,7 @@ export const projects = [
         challenges: "Designing a scalable structure for an e-commerce experience, including product listing logic, filtering systems, and planning secure payment flow integration using Stripe.",
         langTools: ["HTML", "JavaScript", "CSS"],
         gitLink: "https://github.com/theinternetfae/GirlyPop.git",
-        live: "",
-        border: ['#7e1037', '#FF0077']
+        live: "https://theinternetfae.github.io/GirlyPop/",
+        border: ['#7e1037', '#FF0077'],
     }
 ]
