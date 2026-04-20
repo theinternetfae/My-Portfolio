@@ -60,6 +60,36 @@ body {
     }
 }
 
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px);    
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.intro {
+  transition: .3s ease;
+  animation: slideDown 3s;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(600px);    
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.main {
+  transition: .3s ease;
+  animation: slideUp 5s;
+}
+
+
 .card-container {
   perspective: 1500px;
 }
