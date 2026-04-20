@@ -21,8 +21,8 @@ function Header() {
 
                 <div className="about-projects">
 
-                    <Link to="/">
-                        <button className={`${location.pathname === "/" ? "border-b-mypurple text-mypurple" : ""}`}>About Me</button>
+                    <Link to="/about">
+                        <button className={`${location.pathname === "/about" ? "border-b-mypurple text-mypurple" : ""}`}>About Me</button>
                     </Link>
 
                     <Link to="/projects">

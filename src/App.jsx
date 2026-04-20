@@ -6,6 +6,7 @@ import Loader from "./utilComp/Loader.jsx"
 import { Routes, Route, useLocation } from "react-router-dom";
 import {useState, useEffect} from "react";
 import Offline from "./Offline.jsx";
+import Layout from "./Layout.jsx";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const location = useLocation();
   const [loading, setLoading] = useState(true);
+  const [leftLanding, setLeftLanding] = useState(false);
 
 
   //CHECKING IS ONLINE
@@ -94,7 +96,9 @@ function App() {
 
 
 
-
+  useEffect(() => {
+    console.log(leftLanding);
+  }, [leftLanding])
 
 
   return (
@@ -103,22 +107,26 @@ function App() {
       {!isOnline ? (
         <Offline/>
       ) : 
-      (
+      (loading) ? (
+        <Loader/>
+      ) : (
+        
+        <>
+        
+          <Routes location={nextLocation}>
 
-        <main className='test'>
-          {loading ? <Loader/> : ''}
-          <Header/>
+            <Route path="/" element={<Layout/>}>
+  
+              <Route index element={<Landing/>}/>
 
-          <Landing/>
+              <Route path="about" element={<About />}/>
+              <Route path="projects" element={<Body />}/>
+
+            </Route>
+
+          </Routes> 
         
-                  
-          {/* <Routes location={nextLocation}>
-            <Route path="/" element={<About />}/>
-            <Route path="/projects" element={<Body />}/>
-          </Routes>  */}
-        
-        
-        </main>
+        </>
 
       )}
 

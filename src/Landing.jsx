@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 function Landing() {
     return ( 
         <section className="landing-page">
@@ -18,8 +20,15 @@ function Landing() {
                 </div>
                 <h1>MY PORTFOLIO</h1>
                 <div className="land-directions">
-                    <button className="about">About</button>
-                    <button className="projects">Projects</button>
+                    
+                    <Link to="/about">
+                        <button className="about">About</button>
+                    </Link>
+                    
+                    <Link to="/projects">
+                        <button className="projects">Projects</button>
+                    </Link>
+                    
                 </div>
             </div>
 
