@@ -14,14 +14,21 @@ body {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
+  cursor: default;
 }
 
 .landing-page {
-  background: #CCCCCC;
-  background-image: url(../public/images/Portfolio-bg-design.png);
-  background-position: center;
+  background-color: #CCCCCC;
+  background-image: 
+    url("../public/images/top-right-bg.png"),
+    url("../public/images/bottom-left-bg.png");
+
+  background-position: 
+    top right,
+    bottom left;
+
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 1200px, 1200px;
 }
 
 
@@ -111,29 +118,40 @@ body {
 @layer components {
 
   .landing-page {
-    @apply fixed top-0 z-50 w-full h-full p-10;
+    @apply fixed top-0 z-50 w-full h-full p-4 py-8
+    lg:p-10;
 
-    .name-cont {
-      @apply border border-t-transparent border-x-transparent border-4 w-[60%] border-white;
+    .intro {
+      @apply h-[15%] flex flex-col justify-center
+      lg:h-[20%];
 
-      p {
-        @apply p-2 border border-2 text-center w-[30%] bg-white rounded-lg font-bold mb-2 border-mypurple;
+      .name-cont {
+        @apply border border-t-transparent border-x-transparent border-4 border-white w-[85%]
+        lg:w-[60%];
 
-        span {
-          @apply text-mypurple;
+        p {
+          @apply p-2 text-sm border border-2 text-center w-[70%] bg-white rounded-lg font-bold mb-2 border-mypurple
+          lg:w-[30%] md:text-base;
+
+          span {
+            @apply text-mypurple;
+          }
         }
+      }
+
+      & .title-cont {
+        @apply border border-2 w-[80%] mt-2 text-center text-lg font-bold bg-white rounded-lg p-2 text-mypurple
+        lg:w-[40%] md:text-2xl lg:mt-2;
       }
     }
 
-    & .title-cont {
-      @apply border border-2 w-[40%] mt-4 text-center text-2xl font-bold bg-white rounded-lg p-2 text-mypurple
-    }
-
     & .main {
-      @apply mt-2 h-[85%] flex flex-col items-center justify-around; 
+      @apply mt-2 h-[85%] flex flex-col items-center justify-around
+      lg:h-[80%] lg:gap-4; 
 
       .img-cont {
-        @apply shadow-lg w-[20%] h-[30%] rounded-full;
+        @apply shadow-lg w-[50%] h-[30%] rounded-full
+        lg:w-[50%] lg:h-[50%];
 
         img {
           @apply object-cover h-full w-full rounded-full
@@ -141,15 +159,18 @@ body {
       }
 
       & h1 {
-        @apply border border-2 w-[60%] text-center text-7xl font-bold text-mypurple bg-white p-4 rounded-xl;
+        @apply border border-2 w-[80%] text-center text-4xl font-bold text-mypurple bg-white p-4 rounded-xl
+        lg:w-[60%] md:text-7xl;
       }
 
       & .land-directions {
-        @apply w-[60%] flex justify-around;
+        @apply w-[80%] flex justify-around
+        lg:w-[60%];
 
         button {
-          @apply p-4 border border-2 w-[20%] rounded-lg text-lg shadow-lg font-bold cursor-pointer transition ease-in-out duration-300
-          active:scale-90;
+          @apply p-2 border border-2 w-[40%] rounded-lg shadow-lg font-bold cursor-pointer transition ease-in-out duration-300
+          active:scale-90
+          lg:w-[20%] lg:p-4 md:text-lg md:p-4;
         }
 
         & .about {
