@@ -86,7 +86,7 @@ body {
 
 .main {
   transition: .3s ease;
-  animation: slideUp 5s;
+  animation: slideUp 3s;
 }
 
 
