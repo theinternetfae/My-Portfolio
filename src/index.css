@@ -16,6 +16,15 @@ body {
   background: #CCCCCC;
   overflow-x: hidden;
   cursor: default;
+  background-image: 
+    url("./images/top-right-bg.png"),
+    url("./images/bottom-left-bg.png");
+  background-position: 
+    top right,
+    bottom left;
+  background-repeat: no-repeat;
+  background-size: 1200px, 1200px;
+
 }
 
 .landing-page {

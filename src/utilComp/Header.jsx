@@ -44,8 +44,8 @@ function Header() {
     
                         <div className="navigating-sm">
 
-                            <Link to="/">
-                                <button className={`navigation ${location.pathname === "/" ? "text-mypurple" : ""}`} onClick={() => setOptSm(prev => !prev)}>About me</button>
+                            <Link to="/about">
+                                <button className={`navigation ${location.pathname === "/about" ? "text-mypurple" : ""}`} onClick={() => setOptSm(prev => !prev)}>About me</button>
                             </Link>
 
                             <Link to="/projects">

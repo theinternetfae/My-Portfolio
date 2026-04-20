@@ -14,7 +14,6 @@ function App() {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const location = useLocation();
   const [loading, setLoading] = useState(true);
-  const [leftLanding, setLeftLanding] = useState(false);
 
 
   //CHECKING IS ONLINE
@@ -63,6 +62,7 @@ function App() {
 
   //INITIAL LOADING
   useEffect(() => {
+
     const timer = setTimeout(() => {
       setLoading(false);
     }, 5000);
@@ -93,12 +93,6 @@ function App() {
     }
   }, [location, nextLocation]);
 
-
-
-
-  useEffect(() => {
-    console.log(leftLanding);
-  }, [leftLanding])
 
 
   return (
@@ -134,4 +128,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
