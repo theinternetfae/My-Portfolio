@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiAppwrite, SiGithub, SiFigma } from "react-icons/si";
+import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiAppwrite, SiGithub, SiFigma, SiVite } from "react-icons/si";
 
 function About() {
 
@@ -43,6 +43,11 @@ function About() {
             Icon: SiFigma,
             color: "#F24E1E",
             tool: "Figma"
+        },
+        {
+            Icon: SiVite,
+            color: "#747BFF",
+            tool: "Vite" 
         }
     ];
 
