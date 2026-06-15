@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/theinternetfae/My-Portfolio.git",
+  "homepage": "https://theinternetfae.github.io/My-Portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
