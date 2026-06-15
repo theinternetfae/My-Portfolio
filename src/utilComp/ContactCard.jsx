@@ -15,7 +15,7 @@ function ContactCard({close}) {
                             <i className="bi bi-whatsapp cont-icon"></i>
                             <p>+234 904 380 9172</p>
                         </div>
-                    </a>
+                    </a> 
 
                     <a href="https://github.com/theinternetfae" target="_blank">
                         <div className="contact">
