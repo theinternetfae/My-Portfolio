@@ -1,4 +1,4 @@
-import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiAppwrite } from "react-icons/si";
+import { SiHtml5, SiTailwindcss, SiReact, SiJavascript, SiCss3, SiAppwrite, SiVite } from "react-icons/si";
 import { useState, useRef, useEffect, useMemo } from "react";
 
 
@@ -35,6 +35,11 @@ function AboutProject({project}) {
             name: "Appwrite",
             Icon: SiAppwrite,
             color: "#FD366E"
+        },
+        {
+            name: "Vite",
+            Icon: SiVite,
+            color: "#747BFF"
         }
     ];
 
