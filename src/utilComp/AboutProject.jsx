@@ -125,7 +125,7 @@ function AboutProject({project}) {
 
                     <a href={live} target="_blank">
                         <button className={`contact ${!live && "border-white bg-grey hover:text-white cursor-not-allowed"}`} 
-                        title={!live ? "Project is being refactored, will be back soon." : "See the Live project"}
+                        title={!live ? "IN SERVICE. Will be available soon" : "See the Live project"}
                         disabled={!live}
                         >
                             <i className="bi bi-globe2"></i>

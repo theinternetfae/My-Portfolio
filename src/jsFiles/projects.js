@@ -1,4 +1,3 @@
-// "https://theinternetfae.github.io/Optima-V.2/"
 export const projects = [
     {
         id: 0,
@@ -11,7 +10,7 @@ export const projects = [
         challenges: "Built a system that responds to user behavior over time, which required managing asynchronous data, structuring state effectively, and designing UI logic that reflects changing conditions without breaking user experience.",
         langTools: ["HTML", "React", "TailwindCSS", "Appwrite", "Vite"],
         gitLink: "https://github.com/theinternetfae/Optima-V.2.git",
-        live: '',
+        live: "https://theinternetfae.github.io/Optima-V.2/",
         border: ['#60A5FA', '#032C7D'],
     },
     {

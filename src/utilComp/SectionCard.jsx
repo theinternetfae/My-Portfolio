@@ -42,7 +42,7 @@ function SectionCard({project, aboutProject}) {
 
                     <a href={project.live} target="_blank">
                         <button className={`contact ${!project.live && "border-white bg-grey hover:text-white cursor-not-allowed"}`} 
-                        title={!project.live ? "Project is being refactored, will be back soon." : "See the Live project"}
+                        title={!project.live ? "IN SERVICE. Will be available soon" : "See the Live project"}
                         disabled={!project.live}
                         >
                             <i className="bi bi-globe2"></i>
