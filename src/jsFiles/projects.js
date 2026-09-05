@@ -9,8 +9,8 @@ export const projects = [
         features: ["Dynamic task system that adapts based on user completion patterns", "Real-time data persistence and syncing using Appwrite", "User authentication for personalized task management", "Smart feedback loop that adjusts expectations based on consistency", "Clean, responsive UI designed for ease of use across devices"],
         challenges: "Built a system that responds to user behavior over time, which required managing asynchronous data, structuring state effectively, and designing UI logic that reflects changing conditions without breaking user experience.",
         langTools: ["HTML", "React", "TailwindCSS", "Appwrite", "Vite"],
-        gitLink: "https://github.com/theinternetfae/Optima-V.2.git",
-        live: "https://theinternetfae.github.io/Optima-V.2/",
+        gitLink: "https://github.com/theinternetfae/Optima-V3.git",
+        live: "https://theinternetfae.github.io/Optima-V3/",
         border: ['#60A5FA', '#032C7D'],
     },
     {
